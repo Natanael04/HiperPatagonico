@@ -129,6 +129,7 @@
     <Content Include="img\avatar.jpg" />
     <Content Include="img\coyhaique.jpg" />
     <Content Include="img\fondo.jpg" />
+    <Content Include="img\Logo_hiper.png" />
     <Content Include="Index.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
