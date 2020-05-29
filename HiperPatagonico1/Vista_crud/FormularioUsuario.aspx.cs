@@ -5,18 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HiperPatagonico1
+namespace HiperPatagonico1.Vista_crud
 {
-    public partial class _Default : Page
+    public partial class FormularioUsuario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Vista_crud/FormularioUsuario.aspx");
         }
     }
 }

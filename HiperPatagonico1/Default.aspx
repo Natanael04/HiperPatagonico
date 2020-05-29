@@ -23,6 +23,8 @@
                 </div>
             </div>
         </div>
+        <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Formulario" OnClick="Button1_Click"/>
+        <br />
         <div class="row row-centered">
             <div class="col-md-10 col-centered" style="margin-left: 7%">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
