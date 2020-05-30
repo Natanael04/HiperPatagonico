@@ -3,9 +3,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-    <h2><%: Title %>.</h2>
-    <h3>Youturnosssss .</h3>
-    <p>Use this area to provide additional information.</p>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-9">
+                <h2>Lista de <%: Title %>.</h2>
+            </div>
+            <div class="col-md-3">
+                <img class="auto-style1" src="img/Logo_hiper.png" />
+            </div>
+        </div>
+    </div>
     <style>
             /*estilos para la tabla*/
     table th {
@@ -19,6 +26,11 @@
     /*para alinear los botones y cuadro de busqueda*/
     .btn-group, .btn-group-vertical {
         position: absolute !important;
+    }
+        .auto-style1 {
+            width: 210px;
+            height: 72px;
+        }
     </style>
    
     

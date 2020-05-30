@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="HiperPatagonico1._Default" %>
+﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="HiperPatagonico1._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -23,19 +23,26 @@
                 </div>
             </div>
         </div>
-        <br />
-        <div class="row" style="text-align:center;">
+        <div class="jumbotron">
+            <div class="row" style="text-align:center;">
 
-            <div class="col-md-4 "style="margin-left: 7%;">
-                <div class="p-3 mb-2 text-white" 
-                    style="
-                    background-color:LightGray;
-                    text-align:center; 
-                    height: 198px;
-                    border-radius: 5px;
-                    margin-top: 25px;
-                    vertical-align: middle;
-                    ">Bienvenido</div>
+            <div class="col-md-4 "style="margin-left: 7%;margin-right: 5%;">
+                <div style="background-color:white;text-align:center; height: 198px;border-radius: 5px;margin-top: 25px;vertical-align: middle;">
+                    <div class="row">
+                        <div class="col" style="padding-top:1em">
+                            <asp:Image src="../img/user.png" ID="Image1" runat="server" Height="86px" Width="86px" />
+                        </div>
+                        <div class="col">
+                            <h3>Bienvenid@:</h3>
+                        </div>
+                        <div class="col">
+                            <p>Pamela Diaz</p>
+                        </div>
+                    </div>
+                    
+
+
+                </div>
             </div>
 
             <div class="col-md-6 col-centered "  >
@@ -77,6 +84,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        
         <script type="text/javascript">
             // Call carousel manually
             $('#myCarouselCustom').carousel();

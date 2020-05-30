@@ -127,14 +127,15 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="img\avatar.png" />
     <Content Include="img\banner.jpg" />
     <Content Include="img\carousel-1.jpg" />
-    <Content Include="img\avatar.jpg" />
     <Content Include="img\carousel-2.jpg" />
     <Content Include="img\carousel-3.jpg" />
     <Content Include="img\coyhaique.jpg" />
     <Content Include="img\fondo.jpg" />
     <Content Include="img\Logo_hiper.png" />
+    <Content Include="img\user.png" />
     <Content Include="Index.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -3,8 +3,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-    <h2><%: Title %>.</h2>
-    <h3>Lista de usuarios</h3>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-9">
+                <h2>Lista de <%: Title %>.</h2>
+            </div>
+            <div class="col-md-3">
+                <img class="auto-style1" src="img/Logo_hiper.png" />
+            </div>
+        </div>
+    </div>
     <style>
             /*estilos para la tabla*/
     table th {
@@ -18,98 +26,110 @@
     /*para alinear los botones y cuadro de busqueda*/
     .btn-group, .btn-group-vertical {
         position: absolute !important;
+    }
+        .auto-style1 {
+            width: 210px;
+            height: 72px;
+        }
     </style>
    
     
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+  <div class="modal-dialog" style="margin-left:35%;margin-top:5%">
+    <div class="modal-content" style="width:65%">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+          <div class="row">
+              <div class="col-md-11">
+                  <h3 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h3>
+              </div>
+              <div class="col-md-1">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          </div>
+        
+        
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="">
           <form>
           <div class="row" >
-                    <div class="col-md-7">
+                    <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelRUT" class="control-label" runat="server" Text="RUT"></asp:Label>
-                            <asp:TextBox ID="rut" class="form-control" name="rut" runat="server" placeholder="Ingrese RUT..."></asp:TextBox>
-                        </div>    
-
-                    </div>
-                    <div class="col-md-7">                            
+                            <asp:TextBox ID="rut" class="form-control" name="rut" runat="server" placeholder="Ingrese RUT..." Width="300px"></asp:TextBox>
+                        </div>
+                        </div>
+              <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelNombre" class="control-label" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="nombre" class="form-control" name="nombre" runat="server" placeholder="Ingrese nombre..."></asp:TextBox>
-                        </div>   
-                    </div>
-                    <div class="col-md-7">
+                            <asp:TextBox ID="nombre" class="form-control" name="nombre" runat="server" placeholder="Ingrese nombre..." Width="300px"></asp:TextBox>
+                        </div>
+
+              </div>
+              <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelApellido" class="control-label" runat="server" Text="Apellido"></asp:Label>
-                            <asp:TextBox ID="apellido" class="form-control" name="apellido" runat="server" placeholder="Ingrese apellido..."></asp:TextBox>
-                        </div>   
+                            <asp:TextBox ID="apellido" class="form-control" name="apellido" runat="server" placeholder="Ingrese apellido..." Width="300px"></asp:TextBox>
                     </div>
-                    <div class="col-md-7">
+                  </div>
+              <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelCargo" runat="server" Text="Cargo"></asp:Label>
 
-                            <select class="form-control" id="cargo">
+                            <select class="form-control" id="cargo" style="width:300px">
                                 <option value="" selected disabled hidden>Seleccione Cargo</option>
-                                <option value="supervisor">Surpervisor</option>
+                                <option value="supervisor">Surpervisores</option>
                                 <option value="secretaria">Secretaría</option>
                             </select>                    
                         </div> 
-                        </div>
+                  </div>
           </div>
         
-                       
+                         </div>
+        
     
                     
-      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
           </form>
       </div>
     </div>
   </div>
-</div>
-
+    </div>
+   
      <!--Ejemplo tabla con DataTables-->
     <div class="container">
-        <div class="row">
+        <div class="row mx-auto ">
                 <div class="col-lg-12">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Agregar</button>
                     <br />
                     <br />
-                    <div class="table-responsive">        
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <div class="table-responsive text-center">        
+                        <table id="example" class="table table-striped table-bordered"  width="80%">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Codigo</th>
-                                <th>Inicio</th>                               
-                                <th>Termino</th>
-                                <th>Colacion</th>
-                                <th>Total horas</th>
-                                <th>Acciones</th>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">RUT</th>
+                                <th class="text-center">Nombre</th>                               
+                                <th class="text-center">Apellido</th>
+                                <th class="text-center">Cargo</th>
+                                <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>01</td>
-                                <td>T/33</td>
-                                <td>123</td>                                
-                                <td>987635</td>
-                                <td>HORA</td>
-                                <td>9</td>
+                                <td>1</td>
+                                <td>20317991-K</td>
+                                <td>Pamela</td>                                
+                                <td>Diaz</td>
+                                <td>Supervisora</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger btn-sm" >Danger</button>
-                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">Warning</button>
+                                    <button type="button" class="btn btn-warning btn-sm">Editar</button>
+                                    <button type="button" class="btn btn-danger btn-sm" >Eliminar</button>
+                                    
                                     
                                 </td>
 
