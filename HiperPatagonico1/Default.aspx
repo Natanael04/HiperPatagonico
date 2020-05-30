@@ -15,18 +15,30 @@
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-5">
-                    <img class="mx-auto" src="img/Logo_hiper.png" />
+                    <img class="mx-auto" src="img/Logo_hiper.png" style="width: 278px; height: 100px" />
                 </div>
                 <div class="col-md-7">
-                    <h1 class="mx-auto">Control Horarios</h1>
+                    <h2 class="mx-auto"><strong>Control Horarios</strong></h2>
                     <p class="mx-auto">Supermercado Hiper Patagonico.</p>
                 </div>
             </div>
         </div>
-        <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Formulario" OnClick="Button1_Click"/>
         <br />
-        <div class="row row-centered">
-            <div class="col-md-10 col-centered" style="margin-left: 7%">
+        <div class="row" style="text-align:center;">
+
+            <div class="col-md-4 "style="margin-left: 7%;">
+                <div class="p-3 mb-2 text-white" 
+                    style="
+                    background-color:LightGray;
+                    text-align:center; 
+                    height: 198px;
+                    border-radius: 5px;
+                    margin-top: 25px;
+                    vertical-align: middle;
+                    ">Bienvenido</div>
+            </div>
+
+            <div class="col-md-6 col-centered "  >
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -39,17 +51,17 @@
                     <div class="carousel-inner">
                         <div class="item active">
                             <div class="text-center">
-                                <img src="img/carousel-1.jpg" alt="" style="height: 500px" >
+                                <img src="img/carousel-1.jpg" alt="" style="width: 560px;height: 310px" >
                             </div>
                         </div>
                         <div class="item">
                             <div class="text-center">
-                                <img src="img/carousel-2.jpg" alt="" style="height: 500px">
+                                <img src="img/carousel-2.jpg" alt="" style="width: 560px;height: 310px">
                             </div>
                         </div>
                         <div class="item">
                             <div class="text-center">
-                                <img src="img/carousel-3.jpg" alt="" style="height: 500px" >
+                                <img src="img/carousel-3.jpg" alt="" style="width: 560px;height: 310px" >
                             </div>
                         </div>
                     </div>
