@@ -45,12 +45,49 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form>
+          <div class="row" >
+                    
+              <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group">
+                            <asp:Label ID="LabelCodigo" class="control-label" runat="server" Text="Codigo"></asp:Label>
+                            <asp:TextBox ID="nombre" class="form-control" name="Codigo" runat="server" placeholder="Ingrese Codigo..." Width="300px"></asp:TextBox>
+                        </div>
+
+              </div>
+              <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group">
+                            <asp:Label ID="LabelInicio" class="control-label" runat="server" Text="Inicio"></asp:Label>
+                            <asp:TextBox ID="apellido" class="form-control" name="Inicio" runat="server" placeholder="Hora inicio" Width="300px"></asp:TextBox>
+                            
+                            
+                        </div>
+              </div>
+               <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group">
+                            <asp:Label ID="Label1" class="control-label" runat="server" Text="Termino"></asp:Label>
+                            <asp:TextBox ID="TextBox1" class="form-control" name="Termino" runat="server" placeholder="Hora salida" Width="300px"></asp:TextBox>
+                        </div>
+              </div>
+              <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group">
+                            <asp:Label ID="Label2" class="control-label" runat="server" Text="Colacion"></asp:Label>
+                            <asp:TextBox ID="TextBox2" class="form-control" name="Colacion" runat="server" placeholder="Hora colacion" Width="300px"></asp:TextBox>
+                        </div>
+              </div>
+              <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group">
+                            <asp:Label ID="Label3" class="control-label" runat="server" Text="Total horas"></asp:Label>
+                            <asp:TextBox ID="TextBox3" class="form-control" name="Termino" runat="server" placeholder="Total de horas" Width="300px"></asp:TextBox>
+                        </div>
+              </div>
+          </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
       </div>
+     </form>
     </div>
   </div>
 </div>
@@ -84,9 +121,8 @@
                                 <td>HORA</td>
                                 <td>9</td>
                                 <td>
-                                    <button type="button" class="btn btn-danger btn-sm" >Danger</button>
-                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">Warning</button>
-                                    
+                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal">Editar</button>
+                                    <button type="button" class="btn btn-danger btn-sm" >Eliminar</button>
                                 </td>
 
                             </tr>
