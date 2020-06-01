@@ -31,19 +31,48 @@
         <li class="ui-state-default">Item 5</li>
     </ul>
 
-    <ul id="sortable2" class="connectedSortable">
-        <li class="ui-state-highlight">Item 1</li>
-        <li class="ui-state-highlight">Item 2</li>
-        <li class="ui-state-highlight">Item 3</li>
-        <li class="ui-state-highlight">Item 4</li>
-        <li class="ui-state-highlight">Item 5</li>
-    </ul>
+    <div class="jumbotron">
+        <div class="row">
+                <div class="col-lg-12">
+                   
+                    <div class="table-responsive text-center">        
+                        <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Lunes</th>
+                                <th class="text-center">Martes</th>
+                                <th class="text-center">Miercoles</th>                               
+                                <th class="text-center">jueves</th>
+                                <th class="text-center">Viernes</th>
+                                <th class="text-center">Sabado</th>
+                                <th class="text-center">Domingo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sortable2">
+                            <tr>
+                                <td>asdad</td>
+                                <td  >asdad</td>
+                                <td>asd</td>                                
+                                <td >asdad</td>
+                                <td >asdasd</td>
+                                <td >asda</td>
+                                <td >asdasd</td>
+
+                            </tr>
+                                                    
+                        </tbody>        
+                       </table>                  
+                    </div>
+                </div>
+        </div>  
+    </div>
   
     <script>
         $(function () {
             $("#sortable1, #sortable2").sortable({
                 connectWith: ".connectedSortable"
             }).disableSelection();
+
         });
     </script>
 </asp:Content>
