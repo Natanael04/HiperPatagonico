@@ -117,8 +117,7 @@
                                 <td>Gerente</td>
                                 <td>
                                     <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
-                                    <button type="button" class="btn btn-danger btn-sm" >Eliminar</button>
-                                    
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>
                                     
                                 </td>
 
@@ -130,6 +129,22 @@
                 </div>
         </div>  
     </div>
+    <div class="modal fade" id="confirm-eliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Eliminar Empleado</h3>
+            </div>
+            <div class="modal-body">
+                <p>¿Esta seguro de eliminar este empleado?, esta acción es irreversible.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         $(document).ready(function () {
 

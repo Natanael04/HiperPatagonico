@@ -11,7 +11,21 @@ namespace HiperPatagonico1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int horasTotales = 0;
+            int horaInicio = 800;
+            int horaTermino = 1800;
+            int colacion = 100;
+            String horasTotalesTxt = "";
 
+            horasTotales = horaTermino - horaInicio - colacion;
+            horasTotalesTxt = horasTotales.ToString().Insert(1,":");
+
+            LabelHoras.Text = horasTotalesTxt; 
+        }
+
+        protected void ButtonEditar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Crud_turnos/EditarTurno.aspx");
         }
     }
 }

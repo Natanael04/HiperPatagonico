@@ -114,6 +114,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Crud_empleados\EditarEmpleado.aspx" />
+    <Content Include="Crud_turnos\EditarTurno.aspx" />
     <Content Include="Crud_usuarios\EditarUsuario.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Empleados.aspx" />
@@ -198,6 +199,13 @@
     </Compile>
     <Compile Include="Crud_empleados\EditarEmpleado.aspx.designer.cs">
       <DependentUpon>EditarEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Crud_turnos\EditarTurno.aspx.cs">
+      <DependentUpon>EditarTurno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crud_turnos\EditarTurno.aspx.designer.cs">
+      <DependentUpon>EditarTurno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Crud_usuarios\EditarUsuario.aspx.cs">
       <DependentUpon>EditarUsuario.aspx</DependentUpon>

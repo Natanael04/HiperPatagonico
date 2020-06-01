@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace HiperPatagonico1
+namespace HiperPatagonico1.Crud_turnos
 {
 
 
-    public partial class Turnos
+    public partial class EditarTurno
     {
 
         /// <summary>
@@ -51,13 +51,13 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.TextBox inicio;
 
         /// <summary>
-        /// Control Label1.
+        /// Control LabeTermino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label LabeTermino;
 
         /// <summary>
         /// Control termino.
@@ -69,13 +69,13 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.TextBox termino;
 
         /// <summary>
-        /// Control Label2.
+        /// Control LabelColacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label LabelColacion;
 
         /// <summary>
         /// Control colacion.
@@ -85,23 +85,5 @@ namespace HiperPatagonico1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox colacion;
-
-        /// <summary>
-        /// Control LabelHoras.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelHoras;
-
-        /// <summary>
-        /// Control ButtonEditar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEditar;
     }
 }
