@@ -69,7 +69,13 @@
                             <asp:Label ID="LabelApellido" class="control-label" runat="server" Text="Apellido"></asp:Label>
                             <asp:TextBox ID="apellido" class="form-control" name="apellido" runat="server" placeholder="Ingrese Apellido..." Width="300px"></asp:TextBox>
                         </div>
+              </div>
+              <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group">
+                            <asp:Label ID="Label1" class="control-label" runat="server" Text="Cargo"></asp:Label>
+                            <asp:TextBox ID="TextBox1" class="form-control" name="Cargo" runat="server" placeholder="Ingrese Cargo..." Width="300px"></asp:TextBox>
                         </div>
+              </div>
           </div>
         
                          </div>
@@ -99,6 +105,7 @@
                                 <th class="text-center">ID</th>
                                 <th class="text-center">Nombre</th>
                                 <th class="text-center">Apellido</th>
+                                <th class="text-center">Cargo</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
@@ -107,6 +114,7 @@
                                 <td>1</td>
                                 <td>Vicente</td>                                
                                 <td>Galindo</td>
+                                <td>Gerente</td>
                                 <td>
                                     <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
                                     <button type="button" class="btn btn-danger btn-sm" >Eliminar</button>
