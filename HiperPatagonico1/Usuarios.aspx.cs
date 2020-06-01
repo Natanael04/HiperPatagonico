@@ -13,5 +13,10 @@ namespace HiperPatagonico1
         {
 
         }
+
+        protected void ButtonEditar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Crud_usuarios/EditarUsuario.aspx");
+        }
     }
 }

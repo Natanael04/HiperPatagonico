@@ -16,7 +16,7 @@
     <style>
             /*estilos para la tabla*/
     table th {
-        background-color: #337ab7 !important;
+        background-color: #EA9800 !important;
         color: white;
     }
     table>tbody>tr>td {
@@ -56,10 +56,10 @@
 </div>
 
      <!--Ejemplo tabla con DataTables-->
-    <div class="container">
+    <div class="jumbotron">
         <div class="row">
                 <div class="col-lg-12">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Agregar</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Agregar</button>
                     <br />
                     <br />
                     <div class="table-responsive">        

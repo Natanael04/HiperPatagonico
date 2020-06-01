@@ -113,6 +113,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Crud_empleados\EditarEmpleado.aspx" />
+    <Content Include="Crud_usuarios\EditarUsuario.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Empleados.aspx" />
     <Content Include="favicon.ico" />
@@ -169,7 +171,6 @@
     <Content Include="Turnos.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Vista_crud\FormularioUsuario.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -190,6 +191,20 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Crud_empleados\EditarEmpleado.aspx.cs">
+      <DependentUpon>EditarEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crud_empleados\EditarEmpleado.aspx.designer.cs">
+      <DependentUpon>EditarEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Crud_usuarios\EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crud_usuarios\EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -250,13 +265,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Vista_crud\FormularioUsuario.aspx.cs">
-      <DependentUpon>FormularioUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vista_crud\FormularioUsuario.aspx.designer.cs">
-      <DependentUpon>FormularioUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

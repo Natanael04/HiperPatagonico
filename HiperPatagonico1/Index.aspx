@@ -29,7 +29,7 @@
 <body>
 <div class="loginbox" style="border-radius:10px">
         <img src="img/avatar.png" alt="Alternate Text" class="user" />
-        <h2>Ingreso</h2>
+        <h2>Iniciar Sesión</h2> <br />
         <form id="form1" runat="server">
             <asp:Label Text="Rut" CssClass="lblrut" runat="server" />
             <asp:TextBox runat="server" CssClass="txtrut" Placeholder="Ingrese Rut" />

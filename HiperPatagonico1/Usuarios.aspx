@@ -16,7 +16,7 @@
     <style>
             /*estilos para la tabla*/
     table th {
-        background-color: #337ab7 !important;
+        background-color: #EA9800 !important;
         color: white;
     }
     table>tbody>tr>td {
@@ -86,10 +86,7 @@
                         </div> 
                   </div>
           </div>
-        
-                         </div>
-        
-    
+     </div>
                     
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -100,15 +97,15 @@
   </div>
     </div>
    
-     <!--Ejemplo tabla con DataTables-->
-    <div class="container">
+     <!--tabla con DataTables-->
+    <div class="jumbotron">
         <div class="row mx-auto ">
                 <div class="col-lg-12">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Agregar</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Agregar</button>
                     <br />
                     <br />
                     <div class="table-responsive text-center">        
-                        <table id="example" class="table table-striped table-bordered"  width="80%">
+                        <table id="example" class="table table-striped table-bordered"  >
                         <thead>
                             <tr>
                                 <th class="text-center">ID</th>
@@ -127,9 +124,8 @@
                                 <td>Diaz</td>
                                 <td>Supervisora</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm">Editar</button>
-                                    <button type="button" class="btn btn-danger btn-sm" >Eliminar</button>
-                                    
+                                    <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>
                                     
                                 </td>
 
@@ -141,6 +137,22 @@
                 </div>
         </div>  
     </div>
+    <div class="modal fade" id="confirm-eliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Eliminar Usuario</h3>
+            </div>
+            <div class="modal-body">
+                <p>¿Esta seguro de eliminar este usuario?, esta acción es irreversible.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         $(document).ready(function () {
 
