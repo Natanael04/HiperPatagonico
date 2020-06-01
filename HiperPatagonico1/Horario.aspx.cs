@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace HiperPatagonico1
 {
-    public partial class About : Page
+    public partial class Horario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
