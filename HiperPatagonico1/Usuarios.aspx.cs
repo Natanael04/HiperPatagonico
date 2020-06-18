@@ -15,32 +15,28 @@ namespace HiperPatagonico1
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-7FO13N5P\SQLEXPRESS;Initial Catalog=control_horarios;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (!this.IsPostBack)
             {
-                
-                    SqlCommand cmd = new SqlCommand("Select * From Usuario", con);
-                    con.Open();
-
-                    cmd.CommandType = CommandType.Text;
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        rutTxt.Text = dr[1].ToString();//test para select
-                        //textBox2.Text = dr[1].ToString();
-                        //textBox3.Text = dr[2].ToString();
-                    }
-                    dr.Close();
-                
+                this.BindGrid();
             }
-            catch (Exception ex)
+        }
+        private void BindGrid()
+        {
+            using (con)
             {
-                MessageBox.Text = ex.Message;
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Usuario"))
                 {
-                    con.Close();
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        sda.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            GridView1.DataSource = dt;
+                            GridView1.DataBind();
+                        }
+                    }
                 }
             }
         }

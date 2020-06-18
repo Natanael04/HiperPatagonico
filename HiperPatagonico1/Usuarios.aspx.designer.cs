@@ -123,12 +123,12 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.Label MessageBox;
 
         /// <summary>
-        /// Control ButtonEditar.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEditar;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

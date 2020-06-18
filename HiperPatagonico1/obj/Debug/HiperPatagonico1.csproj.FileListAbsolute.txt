@@ -378,3 +378,10 @@ C:\Users\henri\OneDrive\Escritorio\HiperPatagonico\HiperPatagonico1\obj\Debug\Hi
 C:\Users\henri\OneDrive\Escritorio\HiperPatagonico\HiperPatagonico1\obj\Debug\HiperPatagonico1.csproj.CopyComplete
 C:\Users\henri\OneDrive\Escritorio\HiperPatagonico\HiperPatagonico1\obj\Debug\HiperPatagonico1.dll
 C:\Users\henri\OneDrive\Escritorio\HiperPatagonico\HiperPatagonico1\obj\Debug\HiperPatagonico1.pdb
+C:\Users\henri\Source\Repos\HiperPatagonico\HiperPatagonico1\bin\CapaDatos.dll
+C:\Users\henri\Source\Repos\HiperPatagonico\HiperPatagonico1\bin\CapaNegocio.dll
+C:\Users\henri\Source\Repos\HiperPatagonico\HiperPatagonico1\bin\EntityFramework.dll
+C:\Users\henri\Source\Repos\HiperPatagonico\HiperPatagonico1\bin\CapaDatos.pdb
+C:\Users\henri\Source\Repos\HiperPatagonico\HiperPatagonico1\bin\CapaDatos.dll.config
+C:\Users\henri\Source\Repos\HiperPatagonico\HiperPatagonico1\bin\CapaNegocio.pdb
+C:\Users\henri\Source\Repos\HiperPatagonico\HiperPatagonico1\bin\EntityFramework.xml
