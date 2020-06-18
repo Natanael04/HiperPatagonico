@@ -12,7 +12,7 @@ namespace HiperPatagonico1
 {
     public partial class Ingresar : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-7FO13N5P\SQLEXPRESS;Initial Catalog=control_clientes;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-7FO13N5P\SQLEXPRESS;Initial Catalog=control_horarios;Integrated Security=True");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,6 +44,7 @@ namespace HiperPatagonico1
                 string rut = this.txtRut.Text.Replace(";", "").Replace("--", "");
                 string contrasena = this.txtPass.Text.Replace(";", "").Replace("--", "");
 
+                //Response.Redirect("~/Default.aspx");
                 SqlCommand cmd = new SqlCommand("Select * From Usuario where rut='" + rut + "'", con);
 
                 con.Open();

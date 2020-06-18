@@ -24,13 +24,13 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.Label LabelRUT;
 
         /// <summary>
-        /// Control rut.
+        /// Control rutTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox rut;
+        protected global::System.Web.UI.WebControls.TextBox rutTxt;
 
         /// <summary>
         /// Control LabelNombre.
@@ -42,13 +42,13 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.Label LabelNombre;
 
         /// <summary>
-        /// Control nombre.
+        /// Control nombreTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombre;
+        protected global::System.Web.UI.WebControls.TextBox nombreTxt;
 
         /// <summary>
         /// Control LabelApellido.
@@ -60,13 +60,31 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.Label LabelApellido;
 
         /// <summary>
-        /// Control apellido.
+        /// Control apellidoTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox apellido;
+        protected global::System.Web.UI.WebControls.TextBox apellidoTxt;
+
+        /// <summary>
+        /// Control LabelContrasena.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelContrasena;
+
+        /// <summary>
+        /// Control contrasenaTxt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox contrasenaTxt;
 
         /// <summary>
         /// Control LabelCargo.
@@ -76,6 +94,33 @@ namespace HiperPatagonico1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelCargo;
+
+        /// <summary>
+        /// Control DropDownListCargo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCargo;
+
+        /// <summary>
+        /// Control ButtonAgregar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonAgregar;
+
+        /// <summary>
+        /// Control MessageBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MessageBox;
 
         /// <summary>
         /// Control ButtonEditar.

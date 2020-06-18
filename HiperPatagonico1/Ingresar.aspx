@@ -26,7 +26,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-size: cover;">
 <div class="loginbox" style="border-radius:10px">
         <img src="img/avatar.png" alt="Alternate Text" class="user" />
         <h2>Iniciar Sesión</h2> <br />

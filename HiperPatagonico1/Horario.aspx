@@ -226,7 +226,7 @@ div#redips-drag #table1 input {
 							<tr>
 								<!-- if checkbox is checked, clone school subjects to the whole table row  -->
 								<td class="redips-mark blank">
-									<input id="week" type="checkbox" title="Apply school subjects to the week" checked/>
+									<input id="week" type="checkbox" title="Apply school subjects to the week"/>
 									<input id="report" type="checkbox" title="Show subject report"/>
 								</td>
 								<td class="redips-mark dark">Lunes</td>

@@ -58,39 +58,49 @@
                     <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelRUT" class="control-label" runat="server" Text="RUT"></asp:Label>
-                            <asp:TextBox ID="rut" class="form-control" name="rut" runat="server" placeholder="Ingrese RUT..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="rutTxt" class="form-control" name="rutTxt" runat="server" required placeholder="Ingrese RUT..." Width="300px"></asp:TextBox>
                         </div>
                         </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelNombre" class="control-label" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="nombre" class="form-control" name="nombre" runat="server" placeholder="Ingrese nombre..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="nombreTxt" class="form-control" name="nombreTxt" runat="server" required placeholder="Ingrese nombre..." Width="300px"></asp:TextBox>
                         </div>
 
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelApellido" class="control-label" runat="server" Text="Apellido"></asp:Label>
-                            <asp:TextBox ID="apellido" class="form-control" name="apellido" runat="server" placeholder="Ingrese apellido..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="apellidoTxt" class="form-control" name="apellidoTxt" runat="server" required placeholder="Ingrese apellido..." Width="300px"></asp:TextBox>
+                    </div>
+                  </div>
+              <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group">
+                            <asp:Label ID="LabelContrasena" class="control-label" runat="server" Text="Contraseña"></asp:Label>
+                            <asp:TextBox ID="contrasenaTxt" type="password" class="form-control" name="contrasenaTxt" runat="server" required placeholder="Ingrese contraseña..." Width="300px"></asp:TextBox>
                     </div>
                   </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelCargo" runat="server" Text="Cargo"></asp:Label>
-
-                            <select class="form-control" id="cargo" style="width:300px">
-                                <option value="" selected disabled hidden>Seleccione Cargo</option>
-                                <option value="supervisor">Surpervisores</option>
-                                <option value="secretaria">Secretaría</option>
-                            </select>                    
+                            <asp:DropDownList ID="DropDownListCargo" class="form-control" runat="server" required>
+                                <asp:ListItem value="" selected disabled hidden>Seleccione Cargo</asp:ListItem>
+                                <asp:ListItem value="supervisor">Supervisores</asp:ListItem>
+                                <asp:ListItem value="secretaria">Secretaría</asp:ListItem>
+                                <asp:ListItem value="empleado">Empleado</asp:ListItem>
+                            </asp:DropDownList>                    
                         </div> 
                   </div>
           </div>
      </div>
                     
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+          <div class="row">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <asp:Button ID="ButtonAgregar" runat="server" class="btn btn-primary" Text="Guardar" OnClick="ButtonAgregar_Click"/>
+          </div>
+        
+          <asp:Label ID="MessageBox" runat="server" Text=""></asp:Label>
           </form>
       </div>
     </div>
