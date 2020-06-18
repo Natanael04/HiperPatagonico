@@ -33,10 +33,9 @@
         <form id="form1" runat="server">
             <asp:Label Text="Rut" CssClass="lblrut" runat="server" />
             <asp:TextBox runat="server" CssClass="txtrut" Placeholder="Ingrese Rut" required ID="txtRut" autocomplete="off"/>
-            <asp:Label Text="Contraseña" CssClass="lblpass" runat="server" />
-            <asp:TextBox TextMode="Password"  runat="server"  CssClass="auto-style1" Placeholder="Ingrese contraseña" Width="270px" required ID="txtPass" />
-            <br />
-            <br />
+            <asp:Label Text="Contraseña" CssClass="lblpass" runat="server" /><br />
+            <asp:TextBox TextMode="Password"  runat="server"  CssClass="txtrut" Placeholder="Ingrese contraseña" Width="270px" required ID="txtPass" /><br />
+            <asp:LinkButton Text="¿Olvidaste tu contraseña?" CssClass="btnolvidar" runat="server" /><br /><br />
             <asp:Button Text="Ingresar" CssClass="btn" runat="server" OnClick="Unnamed5_Click"   />
            
             <asp:Label ID="lblMensaje" ForeColor="Red" runat="server" Text="Label"></asp:Label>
