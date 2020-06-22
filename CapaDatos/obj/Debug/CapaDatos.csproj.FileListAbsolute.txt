@@ -10,3 +10,16 @@ C:\Users\henri\Source\Repos\HiperPatagonico\CapaDatos\obj\Debug\CapaDatos.csproj
 C:\Users\henri\Source\Repos\HiperPatagonico\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 C:\Users\henri\Source\Repos\HiperPatagonico\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\henri\Source\Repos\HiperPatagonico\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\bin\Debug\EntityFramework.dll
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\bin\Debug\EntityFramework.xml
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\henri\source\repos\HiperPatagonico test\CapaDatos\bin\Debug\System.Data.SQLite.EF6.dll

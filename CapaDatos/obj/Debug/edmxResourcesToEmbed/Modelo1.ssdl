@@ -5,12 +5,6 @@
     <EntitySet Name="EmpleadoSet" EntityType="Modelo1.Store.EmpleadoSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TurnoSet" EntityType="Modelo1.Store.TurnoSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="HorarioSet" EntityType="Modelo1.Store.HorarioSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RolSet" EntityType="Modelo1.Store.RolSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Usuario_HorarioSet" EntityType="Modelo1.Store.Usuario_HorarioSet" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="UsuarioRol" Association="Modelo1.Store.UsuarioRol">
-      <End Role="Usuario" EntitySet="UsuarioSet" />
-      <End Role="Rol" EntitySet="RolSet" />
-    </AssociationSet>
     <AssociationSet Name="HorarioTurno" Association="Modelo1.Store.HorarioTurno">
       <End Role="Horario" EntitySet="HorarioSet" />
       <End Role="Turno" EntitySet="TurnoSet" />
@@ -18,14 +12,6 @@
     <AssociationSet Name="HorarioEmpleado" Association="Modelo1.Store.HorarioEmpleado">
       <End Role="Horario" EntitySet="HorarioSet" />
       <End Role="Empleado" EntitySet="EmpleadoSet" />
-    </AssociationSet>
-    <AssociationSet Name="Usuario_HorarioUsuario" Association="Modelo1.Store.Usuario_HorarioUsuario">
-      <End Role="Usuario_Horario" EntitySet="Usuario_HorarioSet" />
-      <End Role="Usuario" EntitySet="UsuarioSet" />
-    </AssociationSet>
-    <AssociationSet Name="Usuario_HorarioHorario" Association="Modelo1.Store.Usuario_HorarioHorario">
-      <End Role="Usuario_Horario" EntitySet="Usuario_HorarioSet" />
-      <End Role="Horario" EntitySet="HorarioSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="UsuarioSet">
@@ -37,9 +23,7 @@
     <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="apellido" Type="nvarchar(max)" Nullable="false" />
     <Property Name="contraseña" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Id_rol" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Rol_Id_rol" Type="int" Nullable="false" />
-    <Property Name="Usuario_Horario_Id_usuarioHorario" Type="int" Nullable="false" />
+    <Property Name="rol" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="EmpleadoSet">
     <Key>
@@ -67,35 +51,7 @@
     <Property Name="Id_horario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Id_empleado" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Id_turno" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Usuario_Horario_Id_usuarioHorario" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="RolSet">
-    <Key>
-      <PropertyRef Name="Id_rol" />
-    </Key>
-    <Property Name="Id_rol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombreRol" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Usuario_HorarioSet">
-    <Key>
-      <PropertyRef Name="Id_usuarioHorario" />
-    </Key>
-    <Property Name="Id_usuarioHorario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id_usuario" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Id_horario" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <Association Name="UsuarioRol">
-    <End Role="Usuario" Type="Modelo1.Store.UsuarioSet" Multiplicity="*" />
-    <End Role="Rol" Type="Modelo1.Store.RolSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Rol">
-        <PropertyRef Name="Id_rol" />
-      </Principal>
-      <Dependent Role="Usuario">
-        <PropertyRef Name="Rol_Id_rol" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="HorarioTurno">
     <End Role="Horario" Type="Modelo1.Store.HorarioSet" Multiplicity="1" />
     <End Role="Turno" Type="Modelo1.Store.TurnoSet" Multiplicity="*" />
@@ -117,30 +73,6 @@
       </Principal>
       <Dependent Role="Empleado">
         <PropertyRef Name="Horario_Id_horario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Usuario_HorarioUsuario">
-    <End Role="Usuario_Horario" Type="Modelo1.Store.Usuario_HorarioSet" Multiplicity="1" />
-    <End Role="Usuario" Type="Modelo1.Store.UsuarioSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario_Horario">
-        <PropertyRef Name="Id_usuarioHorario" />
-      </Principal>
-      <Dependent Role="Usuario">
-        <PropertyRef Name="Usuario_Horario_Id_usuarioHorario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Usuario_HorarioHorario">
-    <End Role="Usuario_Horario" Type="Modelo1.Store.Usuario_HorarioSet" Multiplicity="1" />
-    <End Role="Horario" Type="Modelo1.Store.HorarioSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario_Horario">
-        <PropertyRef Name="Id_usuarioHorario" />
-      </Principal>
-      <Dependent Role="Horario">
-        <PropertyRef Name="Usuario_Horario_Id_usuarioHorario" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

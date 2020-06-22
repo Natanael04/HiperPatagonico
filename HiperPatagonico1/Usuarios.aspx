@@ -33,11 +33,12 @@
         }
     </style>
    
-    
+                                
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="margin-left:35%;margin-top:5%">
-    <div class="modal-content" style="width:65%">
+  <div class="modal-dialog" >
+    <div class="modal-content" >
       <div class="modal-header">
           <div class="row">
               <div class="col-md-11">
@@ -53,45 +54,49 @@
         
       </div>
       <div class="modal-body" style="">
-          <form>
           <div class="row" >
                     <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelRUT" class="control-label" runat="server" Text="RUT"></asp:Label>
-                            <asp:TextBox ID="rut" class="form-control" name="rut" runat="server" placeholder="Ingrese RUT..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="rutTxt" class="form-control" name="rutTxt" runat="server" placeholder="Ingrese RUT..." Width="300px" autocomplete="off"></asp:TextBox>
                         </div>
                         </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelNombre" class="control-label" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="nombre" class="form-control" name="nombre" runat="server" placeholder="Ingrese nombre..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="nombreTxt" class="form-control" name="nombreTxt" runat="server" placeholder="Ingrese nombre..." Width="300px" autocomplete="off"></asp:TextBox>
                         </div>
 
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelApellido" class="control-label" runat="server" Text="Apellido"></asp:Label>
-                            <asp:TextBox ID="apellido" class="form-control" name="apellido" runat="server" placeholder="Ingrese apellido..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="apellidoTxt" class="form-control" name="apellidoTxt" runat="server" placeholder="Ingrese apellido..." Width="300px" autocomplete="off"></asp:TextBox>
                     </div>
-                  </div>
+              </div>
+              <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group">
+                            <asp:Label ID="LabelPass" class="control-label" runat="server" Text="Contraseña"></asp:Label>
+                            <asp:TextBox ID="contraseñaTxt" type="password" class="form-control" name="contraseñaTxt" runat="server" placeholder="Ingrese contraseña..." Width="300px"></asp:TextBox>
+                    </div>
+              </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelCargo" runat="server" Text="Cargo"></asp:Label>
-
-                            <select class="form-control" id="cargo" style="width:300px">
-                                <option value="" selected disabled hidden>Seleccione Cargo</option>
-                                <option value="supervisor">Surpervisores</option>
-                                <option value="secretaria">Secretaría</option>
-                            </select>                    
+                            <asp:DropDownList ID="DropDownCargo" runat="server" class="form-control" style="width:300px">
+                                <asp:ListItem value="" selected disabled hidden>Seleccione Cargo</asp:ListItem>
+                                <asp:ListItem value="supervisor">Supervisor</asp:ListItem>
+                                <asp:ListItem value="secretaria">Secretaría</asp:ListItem>
+                                <asp:ListItem value="empleado">Empleado</asp:ListItem>
+                            </asp:DropDownList>
                         </div> 
                   </div>
           </div>
      </div>
-                    
+                      <asp:Label ID="LabelMsg" runat="server" Text=""></asp:Label>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
-          </form>
+          <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButtonAgregar_Click" />
       </div>
     </div>
   </div>
@@ -99,7 +104,9 @@
    
      <!--tabla con DataTables-->
     <div class="jumbotron">
-        <div class="row mx-auto ">
+                
+
+        <div class="row ">
                 <div class="col-lg-12">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Agregar</button>
                     <br />
@@ -117,20 +124,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>20317991-K</td>
-                                <td>Pamela</td>                                
-                                <td>Diaz</td>
-                                <td>Supervisora</td>
-                                <td>
-                                    <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>
-                                    
-                                </td>
-
-                            </tr>
-                                                    
+                            <asp:Repeater ID="RepeaterUsuarios" runat="server">
+                                <ItemTemplate>
+                                   <tr>
+                                       <td><%# Eval("Id_usuario")%></td>
+                                       <td><%# Eval("rut")%></td>
+                                       <td><%# Eval("nombre")%></td>
+                                       <td><%# Eval("apellido")%></td>
+                                       <td><%# Eval("rol")%></td>
+                                       <td>
+                                           <asp:Label ID="LabelId_usuario" runat="server" hidden value="<%# Eval("Id_usuario")%>"></asp:Label>
+                                           <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
+                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>
+                                       </td>
+                                   </tr>
+                               </ItemTemplate>
+                            </asp:Repeater>            
                         </tbody>        
                        </table>                  
                     </div>
@@ -156,7 +165,10 @@
     <script>
         $(document).ready(function () {
 
-            $('#example').DataTable();
+            $('#example').dataTable({
+                "lengthChange": false,
+                "lengthMenu": [5]
+            });
             $('#myModal').modal('toggle')
         });
     </script>

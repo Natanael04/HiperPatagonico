@@ -19,9 +19,6 @@ namespace CapaDatos
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string contraseña { get; set; }
-        public string Id_rol { get; set; }
-    
-        public virtual Rol Rol { get; set; }
-        public virtual Usuario_Horario Usuario_Horario { get; set; }
+        public string rol { get; set; }
     }
 }

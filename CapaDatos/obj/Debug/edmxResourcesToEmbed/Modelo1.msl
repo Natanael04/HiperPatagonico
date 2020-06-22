@@ -9,7 +9,7 @@
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="apellido" ColumnName="apellido" />
           <ScalarProperty Name="contraseña" ColumnName="contraseña" />
-          <ScalarProperty Name="Id_rol" ColumnName="Id_rol" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -41,31 +41,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RolSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Modelo1.Rol)">
-        <MappingFragment StoreEntitySet="RolSet">
-          <ScalarProperty Name="Id_rol" ColumnName="Id_rol" />
-          <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Usuario_HorarioSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Modelo1.Usuario_Horario)">
-        <MappingFragment StoreEntitySet="Usuario_HorarioSet">
-          <ScalarProperty Name="Id_usuarioHorario" ColumnName="Id_usuarioHorario" />
-          <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
-          <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="UsuarioRol" TypeName="Modelo1.UsuarioRol" StoreEntitySet="UsuarioSet">
-      <EndProperty Name="Rol">
-        <ScalarProperty Name="Id_rol" ColumnName="Rol_Id_rol" />
-      </EndProperty>
-      <EndProperty Name="Usuario">
-        <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="HorarioTurno" TypeName="Modelo1.HorarioTurno" StoreEntitySet="TurnoSet">
       <EndProperty Name="Horario">
         <ScalarProperty Name="Id_horario" ColumnName="Horario_Id_horario" />
@@ -80,22 +55,6 @@
       </EndProperty>
       <EndProperty Name="Empleado">
         <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="Usuario_HorarioUsuario" TypeName="Modelo1.Usuario_HorarioUsuario" StoreEntitySet="UsuarioSet">
-      <EndProperty Name="Usuario_Horario">
-        <ScalarProperty Name="Id_usuarioHorario" ColumnName="Usuario_Horario_Id_usuarioHorario" />
-      </EndProperty>
-      <EndProperty Name="Usuario">
-        <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="Usuario_HorarioHorario" TypeName="Modelo1.Usuario_HorarioHorario" StoreEntitySet="HorarioSet">
-      <EndProperty Name="Usuario_Horario">
-        <ScalarProperty Name="Id_usuarioHorario" ColumnName="Usuario_Horario_Id_usuarioHorario" />
-      </EndProperty>
-      <EndProperty Name="Horario">
-        <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

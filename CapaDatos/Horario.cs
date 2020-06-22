@@ -29,6 +29,5 @@ namespace CapaDatos
         public virtual ICollection<Turno> Turno { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Empleado> Empleado { get; set; }
-        public virtual Usuario_Horario Usuario_Horario { get; set; }
     }
 }
