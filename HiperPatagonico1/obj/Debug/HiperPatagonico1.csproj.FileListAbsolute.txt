@@ -686,3 +686,7 @@ C:\Users\henri\source\repos\HiperPatagonico test\HiperPatagonico1\bin\EntityFram
 C:\Users\henri\source\repos\HiperPatagonico test\HiperPatagonico1\bin\System.Data.SQLite.EF6.dll
 C:\Users\henri\source\repos\HiperPatagonico test\HiperPatagonico1\bin\CapaNegocio.dll.config
 C:\Users\henri\source\repos\HiperPatagonico test\HiperPatagonico1\bin\EntityFramework.SqlServer.xml
+C:\Users\henri\source\repos\HiperPatagonico\HiperPatagonico1\bin\EntityFramework.SqlServer.dll
+C:\Users\henri\source\repos\HiperPatagonico\HiperPatagonico1\bin\System.Data.SQLite.EF6.dll
+C:\Users\henri\source\repos\HiperPatagonico\HiperPatagonico1\bin\CapaNegocio.dll.config
+C:\Users\henri\source\repos\HiperPatagonico\HiperPatagonico1\bin\EntityFramework.SqlServer.xml

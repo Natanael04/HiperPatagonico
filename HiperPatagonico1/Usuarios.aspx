@@ -133,7 +133,7 @@
                                        <td><%# Eval("apellido")%></td>
                                        <td><%# Eval("rol")%></td>
                                        <td>
-                                           <asp:Label ID="LabelId_usuario" runat="server" hidden value="<%# Eval("Id_usuario")%>"></asp:Label>
+<%--                                           <asp:Label ID="LabelId_usuario" runat="server" hidden value="<%# Eval("Id_usuario")%>"></asp:Label>--%>
                                            <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
                                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>
                                        </td>
