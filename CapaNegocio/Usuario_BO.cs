@@ -31,5 +31,14 @@ namespace CapaNegocio
         {
             user_DAO.Modificar(u);
         }
+        public Usuario Buscar(int u)
+        {
+            var user = user_DAO.Buscar(u);
+            return user;
+        }
+        public void Eliminar(int id)
+        {
+            user_DAO.Eliminar(id);
+        }
     }
 }

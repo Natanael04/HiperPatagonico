@@ -48,13 +48,29 @@ namespace HiperPatagonico1
             }
             
         }
-        protected void ButtonEditar_Click(object sender, EventArgs e)
+        protected void Repeater1_OnItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            string id;
-            id = "";// modificarrrrrrrrrrrrr
-            Response.Redirect("~/Crud_usuarios/EditarUsuario.aspx?id=" + id);
+            if (e.CommandName == "Update")
+            {
+
+                string id = Convert.ToString(e.CommandArgument);
+
+                Session["user"] = id;
+
+                Response.Redirect("~/Crud_usuarios/EditarUsuario.aspx?id=" + id);
+
+            }
+            if (e.CommandName == "Destroy")
+            {
+
+                int id = Int32.Parse(Convert.ToString(e.CommandArgument));
+                Usuario_BO userBO = new Usuario_BO();
+                userBO.Eliminar(id);
+
+                Response.Redirect("~/Usuarios.aspx");
+
+            }
         }
 
-        
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="HiperPatagonico1.Usuarios" %>
+﻿<%@ Page EnableEventValidation="false" Title="Usuarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="HiperPatagonico1.Usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     
@@ -58,32 +58,32 @@
                     <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelRUT" class="control-label" runat="server" Text="RUT"></asp:Label>
-                            <asp:TextBox ID="rutTxt" class="form-control" name="rutTxt" runat="server" placeholder="Ingrese RUT..." Width="300px" autocomplete="off"></asp:TextBox>
+                            <asp:TextBox ID="rutTxt" class="form-control" name="rutTxt" runat="server" placeholder="Ingrese RUT..." Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
                         </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelNombre" class="control-label" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="nombreTxt" class="form-control" name="nombreTxt" runat="server" placeholder="Ingrese nombre..." Width="300px" autocomplete="off"></asp:TextBox>
+                            <asp:TextBox ID="nombreTxt" class="form-control" name="nombreTxt" runat="server" placeholder="Ingrese nombre..." Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
 
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelApellido" class="control-label" runat="server" Text="Apellido"></asp:Label>
-                            <asp:TextBox ID="apellidoTxt" class="form-control" name="apellidoTxt" runat="server" placeholder="Ingrese apellido..." Width="300px" autocomplete="off"></asp:TextBox>
+                            <asp:TextBox ID="apellidoTxt" class="form-control" name="apellidoTxt" runat="server" placeholder="Ingrese apellido..." Width="300px" required autocomplete="off"></asp:TextBox>
                     </div>
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelPass" class="control-label" runat="server" Text="Contraseña"></asp:Label>
-                            <asp:TextBox ID="contraseñaTxt" type="password" class="form-control" name="contraseñaTxt" runat="server" placeholder="Ingrese contraseña..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="contraseñaTxt" type="password" class="form-control" name="contraseñaTxt" runat="server" placeholder="Ingrese contraseña..." required Width="300px"></asp:TextBox>
                     </div>
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelCargo" runat="server" Text="Cargo"></asp:Label>
-                            <asp:DropDownList ID="DropDownCargo" runat="server" class="form-control" style="width:300px">
+                            <asp:DropDownList ID="DropDownCargo" runat="server" class="form-control" style="width:300px" required>
                                 <asp:ListItem value="" selected disabled hidden>Seleccione Cargo</asp:ListItem>
                                 <asp:ListItem value="supervisor">Supervisor</asp:ListItem>
                                 <asp:ListItem value="secretaria">Secretaría</asp:ListItem>
@@ -124,18 +124,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <asp:Repeater ID="RepeaterUsuarios" runat="server">
+                            <asp:Repeater ID="RepeaterUsuarios" runat="server" OnItemCommand="Repeater1_OnItemCommand">
                                 <ItemTemplate>
                                    <tr>
-                                       <td><%# Eval("Id_usuario")%></td>
+                                       <td><asp:Label ID="Label_id" runat="server" Text='<%#Eval("Id_usuario") %>'/></td>
                                        <td><%# Eval("rut")%></td>
                                        <td><%# Eval("nombre")%></td>
                                        <td><%# Eval("apellido")%></td>
                                        <td><%# Eval("rol")%></td>
                                        <td>
-<%--                                           <asp:Label ID="LabelId_usuario" runat="server" hidden value="<%# Eval("Id_usuario")%>"></asp:Label>--%>
-                                           <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
-                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>
+                                           <asp:linkbutton ID="Linkbutton1" class="btn btn-warning btn-sm" commandname="Update"
+                                               runat="server" text="Editar"  
+                                               CommandArgument='<%#Eval("Id_usuario")%>' />
+                                           <asp:linkbutton ID="Linkbutton2" class="btn btn-danger btn-sm" commandname="Destroy"
+                                               runat="server" text="Eliminar"  
+                                               CommandArgument='<%#Eval("Id_usuario")%>' />
+
+<%--                                           <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click"  />--%>
+<%--                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>--%>
                                        </td>
                                    </tr>
                                </ItemTemplate>

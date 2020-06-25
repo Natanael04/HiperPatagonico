@@ -13,44 +13,48 @@
               </div>
           </div>
       </div><br />
-        <form>
           <div class="row" >
                     <div class="col-md-5 col-md-offset-1">
                         <div class="form-group" style="margin-left: 58px; width: 328px;">
                             <asp:Label ID="LabelRUT" class="control-label" runat="server" Text="RUT"></asp:Label>
-                            <asp:TextBox ID="rut" class="form-control" name="rut" runat="server" placeholder="Ingrese RUT..." Width="300px" value="20317991-k"></asp:TextBox>
+                            <asp:TextBox ID="rutTxt" class="form-control" name="rut" runat="server" placeholder="Ingrese RUT..." Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
                         </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group" style="margin-left: 58px; width: 328px;">
                             <asp:Label ID="LabelNombre" class="control-label" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="nombre" class="form-control" name="nombre" runat="server" placeholder="Ingrese nombre..." Width="300px" value="Pamela"></asp:TextBox>
+                            <asp:TextBox ID="nombreTxt" class="form-control" name="nombre" runat="server" placeholder="Ingrese nombre..." Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
 
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group" style="margin-left: 58px; width: 328px;">
                             <asp:Label ID="LabelApellido" class="control-label" runat="server" Text="Apellido"></asp:Label>
-                            <asp:TextBox ID="apellido" class="form-control" name="apellido" runat="server" placeholder="Ingrese apellido..." Width="300px" value="Diaz"></asp:TextBox>
+                            <asp:TextBox ID="apellidoTxt" class="form-control" name="apellido" runat="server" placeholder="Ingrese apellido..." Width="300px" required autocomplete="off"></asp:TextBox>
+                    </div>
+                  </div>
+              <div class="col-md-7 col-md-offset-1">
+                        <div class="form-group" style="margin-left: 58px; width: 328px;">
+                            <asp:Label ID="LabelContrasena" class="control-label" runat="server" Text="Contraseña"></asp:Label>
+                            <asp:TextBox ID="contrasenaTxt" type="password" class="form-control" name="contrasena" runat="server" placeholder="Ingrese Contraseña..." Width="300px" required></asp:TextBox>
                     </div>
                   </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group" style="margin-left: 58px; width: 328px;">
                             <asp:Label ID="LabelCargo" runat="server" Text="Cargo"></asp:Label>
-
-                            <select class="form-control" id="cargo" style="width:300px">
-                                <option value=""  disabled hidden>Seleccione Cargo</option>
-                                <option value="supervisor" selected>Surpervisores</option>
-                                <option value="secretaria">Secretaría</option>
-                            </select>                    
+                            <asp:DropDownList ID="DropDownCargo" runat="server" class="form-control" style="width:300px" required>
+                                <asp:ListItem value="Supervisor">Supervisor</asp:ListItem>
+                                <asp:ListItem value="Secretaría">Secretaría</asp:ListItem>
+                                <asp:ListItem value="Empleado">Empleado</asp:ListItem>
+                            </asp:DropDownList>                  
                         </div> 
                   </div>
           </div>
             <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Guardar</button>
+          <asp:Button ID="ButtonGuardar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButtonGuardar_Click" />
                 </div>
-          </form>
             </div>
+        <asp:Label ID="LabelErr" ForeColor="White" runat="server" Text=""></asp:Label>
         </div>
     </div>
 </div>
