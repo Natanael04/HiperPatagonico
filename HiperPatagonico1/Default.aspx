@@ -36,7 +36,7 @@
                             <h3>Bienvenid@:</h3>
                         </div>
                         <div class="col">
-                            <p>Pamela Diaz</p>
+                            <p>Vicente Galindo</p>
                         </div>
                     </div>
                     
