@@ -18,7 +18,5 @@ namespace CapaDatos
         public string codigo { get; set; }
         public string horaInicio { get; set; }
         public string horaTermino { get; set; }
-    
-        public virtual Horario Horario { get; set; }
     }
 }

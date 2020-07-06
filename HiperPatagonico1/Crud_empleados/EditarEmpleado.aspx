@@ -13,7 +13,6 @@
               </div>
           </div>
       </div><br />
-        <form>
           <div class="row" >
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group" style="margin-left: 58px; width: 328px;">
@@ -30,9 +29,10 @@
                   </div>
           </div>
             <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Guardar</button>
+          <asp:Button ID="ButtonGuardar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButtonGuardar_Click" />
                 </div>
-          </form>
+                    <asp:Label ID="LabelErr" ForeColor="White" runat="server" Text=""></asp:Label>
+
             </div>
         </div>
     </div>

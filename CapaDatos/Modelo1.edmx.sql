@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/22/2020 20:26:50
+-- Date Created: 07/04/2020 20:04:03
 -- Generated from EDMX file: C:\Users\henri\source\repos\HiperPatagonico\CapaDatos\Modelo1.edmx
 -- --------------------------------------------------
 
@@ -60,8 +60,7 @@ GO
 CREATE TABLE [dbo].[EmpleadoSet] (
     [Id_empleado] int IDENTITY(1,1) NOT NULL,
     [nombre] nvarchar(max)  NOT NULL,
-    [apellido] nvarchar(max)  NOT NULL,
-    [Horario_Id_horario] int  NOT NULL
+    [apellido] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -70,16 +69,15 @@ CREATE TABLE [dbo].[TurnoSet] (
     [Id_turno] int IDENTITY(1,1) NOT NULL,
     [codigo] nvarchar(max)  NOT NULL,
     [horaInicio] nvarchar(max)  NOT NULL,
-    [horaTermino] nvarchar(max)  NOT NULL,
-    [Horario_Id_horario] int  NOT NULL
+    [horaTermino] nvarchar(max)  NOT NULL
 );
 GO
 
 -- Creating table 'HorarioSet'
 CREATE TABLE [dbo].[HorarioSet] (
     [Id_horario] int IDENTITY(1,1) NOT NULL,
-    [Id_empleado] nvarchar(max)  NOT NULL,
-    [Id_turno] nvarchar(max)  NOT NULL
+    [EmpleadoId_empleado] int  NOT NULL,
+    [TurnoId_turno] int  NOT NULL
 );
 GO
 
@@ -115,34 +113,34 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Horario_Id_horario] in table 'TurnoSet'
-ALTER TABLE [dbo].[TurnoSet]
-ADD CONSTRAINT [FK_HorarioTurno]
-    FOREIGN KEY ([Horario_Id_horario])
-    REFERENCES [dbo].[HorarioSet]
-        ([Id_horario])
+-- Creating foreign key on [EmpleadoId_empleado] in table 'HorarioSet'
+ALTER TABLE [dbo].[HorarioSet]
+ADD CONSTRAINT [FK_EmpleadoHorario]
+    FOREIGN KEY ([EmpleadoId_empleado])
+    REFERENCES [dbo].[EmpleadoSet]
+        ([Id_empleado])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_HorarioTurno'
-CREATE INDEX [IX_FK_HorarioTurno]
-ON [dbo].[TurnoSet]
-    ([Horario_Id_horario]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_EmpleadoHorario'
+CREATE INDEX [IX_FK_EmpleadoHorario]
+ON [dbo].[HorarioSet]
+    ([EmpleadoId_empleado]);
 GO
 
--- Creating foreign key on [Horario_Id_horario] in table 'EmpleadoSet'
-ALTER TABLE [dbo].[EmpleadoSet]
-ADD CONSTRAINT [FK_HorarioEmpleado]
-    FOREIGN KEY ([Horario_Id_horario])
-    REFERENCES [dbo].[HorarioSet]
-        ([Id_horario])
+-- Creating foreign key on [TurnoId_turno] in table 'HorarioSet'
+ALTER TABLE [dbo].[HorarioSet]
+ADD CONSTRAINT [FK_TurnoHorario]
+    FOREIGN KEY ([TurnoId_turno])
+    REFERENCES [dbo].[TurnoSet]
+        ([Id_turno])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_HorarioEmpleado'
-CREATE INDEX [IX_FK_HorarioEmpleado]
-ON [dbo].[EmpleadoSet]
-    ([Horario_Id_horario]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_TurnoHorario'
+CREATE INDEX [IX_FK_TurnoHorario]
+ON [dbo].[HorarioSet]
+    ([TurnoId_turno]);
 GO
 
 -- --------------------------------------------------

@@ -54,45 +54,41 @@
         
       </div>
       <div class="modal-body" style="">
-          <form>
           <div class="row" >
                     
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelNombre" class="control-label" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="nombre" class="form-control" name="nombre" runat="server" placeholder="Ingrese nombre..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="nombre" class="form-control" name="nombre" runat="server" placeholder="Ingrese nombre..." Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
 
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelApellido" class="control-label" runat="server" Text="Apellido"></asp:Label>
-                            <asp:TextBox ID="apellido" class="form-control" name="apellido" runat="server" placeholder="Ingrese Apellido..." Width="300px"></asp:TextBox>
-                        </div>
-              </div>
-              <div class="col-md-7 col-md-offset-1">
-                        <div class="form-group">
-                            <asp:Label ID="Label1" class="control-label" runat="server" Text="Cargo"></asp:Label>
-                            <asp:TextBox ID="TextBox1" class="form-control" name="Cargo" runat="server" placeholder="Ingrese Cargo..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="apellido" class="form-control" name="apellido" runat="server" placeholder="Ingrese Apellido..." Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
               </div>
           </div>
-        
                          </div>
         
     
-                    
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
-          </form>
+        <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButtonAgregar_Click" />
       </div>
     </div>
   </div>
     </div>
-   
-     <!--Ejemplo tabla con DataTables-->
+             
+
+     <!--Ejemplo tabla con Repeater-->
     <div class="jumbotron">
+
+       <asp:Label ID="LabelMsg" runat="server" Text=""></asp:Label>
+
+
         <div class="row mx-auto ">
                 <div class="col-lg-12">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Agregar</button>
@@ -105,23 +101,30 @@
                                 <th class="text-center">ID</th>
                                 <th class="text-center">Nombre</th>
                                 <th class="text-center">Apellido</th>
-                                <th class="text-center">Cargo</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Vicente</td>                                
-                                <td>Galindo</td>
-                                <td>Gerente</td>
-                                <td>
-                                    <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>
-                                    
-                                </td>
+                            <asp:Repeater ID="RepeaterEmplados" runat="server" OnItemCommand="Repeater1_OnItemCommand">
+                                <ItemTemplate>
+                                   <tr>
+                                       <td><asp:Label ID="Label_id" runat="server" Text='<%#Eval("Id_empleado") %>'/></td>
+                                       <td><%# Eval("nombre")%></td>
+                                       <td><%# Eval("apellido")%></td>
+                                       <td>
+                                           <asp:linkbutton ID="Linkbutton1" class="btn btn-warning btn-sm" commandname="Update"
+                                               runat="server" text="Editar"  
+                                               CommandArgument='<%#Eval("Id_empleado")%>' />
+                                           <asp:linkbutton ID="Linkbutton2" class="btn btn-danger btn-sm" commandname="Destroy"
+                                               runat="server" text="Eliminar"  
+                                               CommandArgument='<%#Eval("Id_empleado")%>' />
 
-                            </tr>
+<%--                                           <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click"  />--%>
+<%--                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>--%>
+                                       </td>
+                                   </tr>
+                               </ItemTemplate>
+                            </asp:Repeater>  
                                                     
                         </tbody>        
                        </table>                  
@@ -145,10 +148,14 @@
         </div>
     </div>
 </div>
+    
     <script>
         $(document).ready(function () {
 
-            $('#example').DataTable();
+            $('#example').dataTable({
+                "lengthChange": false,
+                "lengthMenu": [5]
+            });
             $('#myModal').modal('toggle')
         });
     </script>

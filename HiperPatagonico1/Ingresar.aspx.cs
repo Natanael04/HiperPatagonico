@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Security;
+using CapaDatos;
+using CapaNegocio;
 
 namespace HiperPatagonico1
 {
@@ -45,7 +47,7 @@ namespace HiperPatagonico1
                 string contrasena = this.txtPass.Text.Replace(";", "").Replace("--", "");
 
                 //Response.Redirect("~/Default.aspx");
-                SqlCommand cmd = new SqlCommand("Select * From Usuario where rut='" + rut + "'", con);
+                SqlCommand cmd = new SqlCommand("Select * From dbo.UsuarioSet where rut='" + rut + "'", con);
 
                 con.Open();
                 cmd.CommandType = CommandType.Text;

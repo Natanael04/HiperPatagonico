@@ -60,6 +60,7 @@
     <Compile Include="Empleado.cs">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Empleado_DAO.cs" />
     <Compile Include="Horario.cs">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>

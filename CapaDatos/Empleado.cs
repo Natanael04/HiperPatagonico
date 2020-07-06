@@ -17,7 +17,5 @@ namespace CapaDatos
         public int Id_empleado { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
-    
-        public virtual Horario Horario { get; set; }
     }
 }

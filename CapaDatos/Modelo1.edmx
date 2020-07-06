@@ -4,62 +4,62 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Modelo1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="Modelo1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
   <EntityContainer Name="Modelo1StoreContainer">
-    <EntitySet Name="UsuarioSet" EntityType="Modelo1.Store.UsuarioSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="EmpleadoSet" EntityType="Modelo1.Store.EmpleadoSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TurnoSet" EntityType="Modelo1.Store.TurnoSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HorarioSet" EntityType="Modelo1.Store.HorarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsuarioSet" EntityType="Modelo1.Store.UsuarioSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpleadoSet" EntityType="Modelo1.Store.EmpleadoSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TurnoSet" EntityType="Modelo1.Store.TurnoSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HorarioSet" EntityType="Modelo1.Store.HorarioSet" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="HorarioTurno" Association="Modelo1.Store.HorarioTurno">
-      <End Role="Horario" EntitySet="HorarioSet" />
-      <End Role="Turno" EntitySet="TurnoSet" />
+      <End EntitySet="HorarioSet" Role="Horario" />
+      <End EntitySet="TurnoSet" Role="Turno" />
     </AssociationSet>
     <AssociationSet Name="HorarioEmpleado" Association="Modelo1.Store.HorarioEmpleado">
-      <End Role="Horario" EntitySet="HorarioSet" />
-      <End Role="Empleado" EntitySet="EmpleadoSet" />
+      <End EntitySet="HorarioSet" Role="Horario" />
+      <End EntitySet="EmpleadoSet" Role="Empleado" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="UsuarioSet">
     <Key>
       <PropertyRef Name="Id_usuario" />
     </Key>
-    <Property Name="Id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="rut" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="apellido" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="contraseña" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="rol" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_usuario" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="rut" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="nombre" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="apellido" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="contraseña" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="rol" Nullable="false" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="EmpleadoSet">
     <Key>
       <PropertyRef Name="Id_empleado" />
     </Key>
-    <Property Name="Id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="apellido" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Horario_Id_horario" Type="int" Nullable="false" />
+    <Property Name="Id_empleado" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="nombre" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="apellido" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="Horario_Id_horario" Nullable="false" Type="int" />
   </EntityType>
   <EntityType Name="TurnoSet">
     <Key>
       <PropertyRef Name="Id_turno" />
     </Key>
-    <Property Name="Id_turno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="codigo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="horaInicio" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="horaTermino" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Horario_Id_horario" Type="int" Nullable="false" />
+    <Property Name="Id_turno" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="codigo" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="horaInicio" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="horaTermino" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="Horario_Id_horario" Nullable="false" Type="int" />
   </EntityType>
   <EntityType Name="HorarioSet">
     <Key>
       <PropertyRef Name="Id_horario" />
     </Key>
-    <Property Name="Id_horario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id_empleado" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Id_turno" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_horario" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Id_empleado" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="Id_turno" Nullable="false" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="HorarioTurno">
-    <End Role="Horario" Type="Modelo1.Store.HorarioSet" Multiplicity="1" />
-    <End Role="Turno" Type="Modelo1.Store.TurnoSet" Multiplicity="*" />
+    <End Type="Modelo1.Store.HorarioSet" Multiplicity="1" Role="Horario" />
+    <End Type="Modelo1.Store.TurnoSet" Multiplicity="*" Role="Turno" />
     <ReferentialConstraint>
       <Principal Role="Horario">
         <PropertyRef Name="Id_horario" />
@@ -70,8 +70,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="HorarioEmpleado">
-    <End Role="Horario" Type="Modelo1.Store.HorarioSet" Multiplicity="1" />
-    <End Role="Empleado" Type="Modelo1.Store.EmpleadoSet" Multiplicity="*" />
+    <End Type="Modelo1.Store.HorarioSet" Multiplicity="1" Role="Horario" />
+    <End Type="Modelo1.Store.EmpleadoSet" Multiplicity="*" Role="Empleado" />
     <ReferentialConstraint>
       <Principal Role="Horario">
         <PropertyRef Name="Id_horario" />
@@ -90,13 +90,13 @@
           <EntitySet Name="EmpleadoSet" EntityType="Modelo1.Empleado" />
           <EntitySet Name="TurnoSet" EntityType="Modelo1.Turno" />
           <EntitySet Name="HorarioSet" EntityType="Modelo1.Horario" />
-          <AssociationSet Name="HorarioTurno" Association="Modelo1.HorarioTurno">
-            <End Role="Horario" EntitySet="HorarioSet" />
-            <End Role="Turno" EntitySet="TurnoSet" />
-          </AssociationSet>
-          <AssociationSet Name="HorarioEmpleado" Association="Modelo1.HorarioEmpleado">
-            <End Role="Horario" EntitySet="HorarioSet" />
+          <AssociationSet Name="EmpleadoHorario" Association="Modelo1.EmpleadoHorario">
             <End Role="Empleado" EntitySet="EmpleadoSet" />
+            <End Role="Horario" EntitySet="HorarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="TurnoHorario" Association="Modelo1.TurnoHorario">
+            <End Role="Turno" EntitySet="TurnoSet" />
+            <End Role="Horario" EntitySet="HorarioSet" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Usuario">
@@ -117,7 +117,6 @@
           <Property Name="Id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="apellido" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Horario" Relationship="Modelo1.HorarioEmpleado" FromRole="Empleado" ToRole="Horario" />
         </EntityType>
         <EntityType Name="Turno">
           <Key>
@@ -127,32 +126,45 @@
           <Property Name="codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="horaInicio" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="horaTermino" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Horario" Relationship="Modelo1.HorarioTurno" FromRole="Turno" ToRole="Horario" />
         </EntityType>
         <EntityType Name="Horario">
           <Key>
             <PropertyRef Name="Id_horario" />
           </Key>
           <Property Name="Id_horario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Id_empleado" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Id_turno" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Turno" Relationship="Modelo1.HorarioTurno" FromRole="Horario" ToRole="Turno" />
-          <NavigationProperty Name="Empleado" Relationship="Modelo1.HorarioEmpleado" FromRole="Horario" ToRole="Empleado" />
+          <Property Name="EmpleadoId_empleado" Type="Int32" Nullable="false" />
+          <Property Name="TurnoId_turno" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="HorarioTurno">
-          <End Type="Modelo1.Horario" Role="Horario" Multiplicity="1" />
-          <End Type="Modelo1.Turno" Role="Turno" Multiplicity="*" />
+        <Association Name="EmpleadoHorario">
+          <End Type="Modelo1.Empleado" Role="Empleado" Multiplicity="1" />
+          <End Type="Modelo1.Horario" Role="Horario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="Id_empleado" />
+            </Principal>
+            <Dependent Role="Horario">
+              <PropertyRef Name="EmpleadoId_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="HorarioEmpleado">
-          <End Type="Modelo1.Horario" Role="Horario" Multiplicity="1" />
-          <End Type="Modelo1.Empleado" Role="Empleado" Multiplicity="*" />
+        <Association Name="TurnoHorario">
+          <End Type="Modelo1.Turno" Role="Turno" Multiplicity="1" />
+          <End Type="Modelo1.Horario" Role="Horario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turno">
+              <PropertyRef Name="Id_turno" />
+            </Principal>
+            <Dependent Role="Horario">
+              <PropertyRef Name="TurnoId_turno" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Modelo1StoreContainer" CdmEntityContainer="Modelo1Container">
+  <EntityContainerMapping CdmEntityContainer="Modelo1Container" StorageEntityContainer="Modelo1StoreContainer">
     <EntitySetMapping Name="UsuarioSet">
       <EntityTypeMapping TypeName="IsTypeOf(Modelo1.Usuario)">
         <MappingFragment StoreEntitySet="UsuarioSet">
@@ -188,27 +200,9 @@
       <EntityTypeMapping TypeName="IsTypeOf(Modelo1.Horario)">
         <MappingFragment StoreEntitySet="HorarioSet">
           <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
-          <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
-          <ScalarProperty Name="Id_turno" ColumnName="Id_turno" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="HorarioTurno" TypeName="Modelo1.HorarioTurno" StoreEntitySet="TurnoSet">
-      <EndProperty Name="Horario">
-        <ScalarProperty Name="Id_horario" ColumnName="Horario_Id_horario" />
-      </EndProperty>
-      <EndProperty Name="Turno">
-        <ScalarProperty Name="Id_turno" ColumnName="Id_turno" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="HorarioEmpleado" TypeName="Modelo1.HorarioEmpleado" StoreEntitySet="EmpleadoSet">
-      <EndProperty Name="Horario">
-        <ScalarProperty Name="Id_horario" ColumnName="Horario_Id_horario" />
-      </EndProperty>
-      <EndProperty Name="Empleado">
-        <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

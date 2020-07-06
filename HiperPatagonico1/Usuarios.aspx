@@ -102,7 +102,7 @@
   </div>
     </div>
    
-     <!--tabla con DataTables-->
+     <!--tabla con Repeater-->
     <div class="jumbotron">
                 
 
