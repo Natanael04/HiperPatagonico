@@ -24,13 +24,13 @@ namespace HiperPatagonico1.Crud_turnos
         protected global::System.Web.UI.WebControls.Label LabelCodigo;
 
         /// <summary>
-        /// Control codigo.
+        /// Control codigoTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox codigo;
+        protected global::System.Web.UI.WebControls.TextBox codigoTxt;
 
         /// <summary>
         /// Control LabelInicio.
@@ -42,13 +42,13 @@ namespace HiperPatagonico1.Crud_turnos
         protected global::System.Web.UI.WebControls.Label LabelInicio;
 
         /// <summary>
-        /// Control inicio.
+        /// Control inicioTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inicio;
+        protected global::System.Web.UI.WebControls.TextBox inicioTxt;
 
         /// <summary>
         /// Control LabeTermino.
@@ -60,30 +60,30 @@ namespace HiperPatagonico1.Crud_turnos
         protected global::System.Web.UI.WebControls.Label LabeTermino;
 
         /// <summary>
-        /// Control termino.
+        /// Control terminoTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox termino;
+        protected global::System.Web.UI.WebControls.TextBox terminoTxt;
 
         /// <summary>
-        /// Control LabelColacion.
+        /// Control ButtonGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelColacion;
+        protected global::System.Web.UI.WebControls.Button ButtonGuardar;
 
         /// <summary>
-        /// Control colacion.
+        /// Control LabelErr.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox colacion;
+        protected global::System.Web.UI.WebControls.Label LabelErr;
     }
 }

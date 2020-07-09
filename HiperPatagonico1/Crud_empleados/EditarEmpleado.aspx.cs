@@ -36,7 +36,7 @@ namespace HiperPatagonico1.Crud_empleados
 
                 empleadoBO.Modificar(empleado);
 
-                Response.Redirect("~/Usuarios.aspx");
+                Response.Redirect("~/Empleados.aspx");
             }
             catch (Exception ex)
             {

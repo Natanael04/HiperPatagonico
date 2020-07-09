@@ -4,14 +4,14 @@
     <EntitySet Name="UsuarioSet" EntityType="Modelo1.Usuario" />
     <EntitySet Name="EmpleadoSet" EntityType="Modelo1.Empleado" />
     <EntitySet Name="TurnoSet" EntityType="Modelo1.Turno" />
-    <EntitySet Name="HorarioSet" EntityType="Modelo1.Horario" />
-    <AssociationSet Name="EmpleadoHorario" Association="Modelo1.EmpleadoHorario">
+    <EntitySet Name="EmpleadoTurnoSet" EntityType="Modelo1.EmpleadoTurno" />
+    <AssociationSet Name="EmpleadoEmpleadoTurno" Association="Modelo1.EmpleadoEmpleadoTurno">
       <End Role="Empleado" EntitySet="EmpleadoSet" />
-      <End Role="Horario" EntitySet="HorarioSet" />
+      <End Role="EmpleadoTurno" EntitySet="EmpleadoTurnoSet" />
     </AssociationSet>
-    <AssociationSet Name="TurnoHorario" Association="Modelo1.TurnoHorario">
+    <AssociationSet Name="TurnoEmpleadoTurno" Association="Modelo1.TurnoEmpleadoTurno">
       <End Role="Turno" EntitySet="TurnoSet" />
-      <End Role="Horario" EntitySet="HorarioSet" />
+      <End Role="EmpleadoTurno" EntitySet="EmpleadoTurnoSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuario">
@@ -42,34 +42,36 @@
     <Property Name="horaInicio" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="horaTermino" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
-  <EntityType Name="Horario">
+  <EntityType Name="EmpleadoTurno">
     <Key>
-      <PropertyRef Name="Id_horario" />
+      <PropertyRef Name="Id_EmpleadoTurno" />
     </Key>
-    <Property Name="Id_horario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_EmpleadoTurno" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <NavigationProperty Name="Empleado" Relationship="Modelo1.EmpleadoEmpleadoTurno" FromRole="EmpleadoTurno" ToRole="Empleado" />
     <Property Name="EmpleadoId_empleado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Turno" Relationship="Modelo1.TurnoEmpleadoTurno" FromRole="EmpleadoTurno" ToRole="Turno" />
     <Property Name="TurnoId_turno" Type="Int32" Nullable="false" />
   </EntityType>
-  <Association Name="EmpleadoHorario">
+  <Association Name="EmpleadoEmpleadoTurno">
     <End Type="Modelo1.Empleado" Role="Empleado" Multiplicity="1" />
-    <End Type="Modelo1.Horario" Role="Horario" Multiplicity="*" />
+    <End Type="Modelo1.EmpleadoTurno" Role="EmpleadoTurno" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Empleado">
         <PropertyRef Name="Id_empleado" />
       </Principal>
-      <Dependent Role="Horario">
+      <Dependent Role="EmpleadoTurno">
         <PropertyRef Name="EmpleadoId_empleado" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TurnoHorario">
+  <Association Name="TurnoEmpleadoTurno">
     <End Type="Modelo1.Turno" Role="Turno" Multiplicity="1" />
-    <End Type="Modelo1.Horario" Role="Horario" Multiplicity="*" />
+    <End Type="Modelo1.EmpleadoTurno" Role="EmpleadoTurno" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Turno">
         <PropertyRef Name="Id_turno" />
       </Principal>
-      <Dependent Role="Horario">
+      <Dependent Role="EmpleadoTurno">
         <PropertyRef Name="TurnoId_turno" />
       </Dependent>
     </ReferentialConstraint>

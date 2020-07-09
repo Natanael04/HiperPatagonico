@@ -32,7 +32,24 @@
             height: 72px;
         }
     </style>
-   
+   <script lang="JavaScript">
+       function validar_rut(source, arguments) {
+           var rut = arguments.Value; suma = 0; mul = 2; i = 0;
+
+           for (i = rut.length - 3; i >= 0; i--) {
+               suma = suma + parseInt(rut.charAt(i)) * mul;
+               mul = mul == 7 ? 2 : mul + 1;
+           }
+
+           var dvr = '' + (11 - suma % 11);
+           if (dvr == '10') dvr = 'K'; else if (dvr == '11') dvr = '0';
+
+           if (rut.charAt(rut.length - 2) != "-" || rut.charAt(rut.length - 1).toUpperCase() != dvr)
+               arguments.IsValid = false;
+           else
+               arguments.IsValid = true;
+       }
+</script>
                                 
 
 <!-- Modal -->
@@ -57,8 +74,9 @@
           <div class="row" >
                     <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
-                            <asp:Label ID="LabelRUT" class="control-label" runat="server" Text="RUT"></asp:Label>
-                            <asp:TextBox ID="rutTxt" class="form-control" name="rutTxt" runat="server" placeholder="Ingrese RUT..." Width="300px" required autocomplete="off"></asp:TextBox>
+                            <asp:Label ID="LabelRUT" class="control-label" runat="server" Text="RUT (con guión)"></asp:Label>
+                            <asp:TextBox id="rutTxt" runat="server" Columns="20" MaxLength="10" class="form-control" Placeholder="Ingrese Rut" required autocomplete="off"/>
+
                         </div>
                         </div>
               <div class="col-md-7 col-md-offset-1">
@@ -85,9 +103,9 @@
                             <asp:Label ID="LabelCargo" runat="server" Text="Cargo"></asp:Label>
                             <asp:DropDownList ID="DropDownCargo" runat="server" class="form-control" style="width:300px" required>
                                 <asp:ListItem value="" selected disabled hidden>Seleccione Cargo</asp:ListItem>
-                                <asp:ListItem value="supervisor">Supervisor</asp:ListItem>
-                                <asp:ListItem value="secretaria">Secretaría</asp:ListItem>
-                                <asp:ListItem value="empleado">Empleado</asp:ListItem>
+                                <asp:ListItem value="Supervisor">Supervisor</asp:ListItem>
+                                <asp:ListItem value="Secretaría">Secretaría</asp:ListItem>
+                                <asp:ListItem value="Empleado">Empleado</asp:ListItem>
                             </asp:DropDownList>
                         </div> 
                   </div>
@@ -95,7 +113,20 @@
      </div>
                       <asp:Label ID="LabelMsg" runat="server" Text=""></asp:Label>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" id="cancelar" class="btn btn-secondary" data-dismiss="modal" onclick="clearTextBox()" >Cancelar</button>
+
+          <script type="text/javascript">
+              function clearTextBox() {
+                  var elements = [];
+                  elements = document.getElementsByClassName("form-control"); // your class name 
+
+                  for (var i = 0; i < elements.length; i++) {
+                      elements[i].value = "";
+                  }
+              }
+
+          </script>
+            <br /><asp:CustomValidator id="cv_rut" runat="server" ForeColor="red" ControlToValidate="rutTxt" Display="Dynamic" ErrorMessage="El rut no es valido" ClientValidationFunction="validar_rut" />
           <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButtonAgregar_Click" />
       </div>
     </div>

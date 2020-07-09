@@ -28,6 +28,6 @@ namespace CapaDatos
         public virtual DbSet<Usuario> UsuarioSet { get; set; }
         public virtual DbSet<Empleado> EmpleadoSet { get; set; }
         public virtual DbSet<Turno> TurnoSet { get; set; }
-        public virtual DbSet<Horario> HorarioSet { get; set; }
+        public virtual DbSet<EmpleadoTurno> EmpleadoTurnoSet { get; set; }
     }
 }

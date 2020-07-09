@@ -60,10 +60,10 @@
     <Compile Include="Empleado.cs">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Empleado_DAO.cs" />
-    <Compile Include="Horario.cs">
+    <Compile Include="EmpleadoTurno.cs">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Empleado_DAO.cs" />
     <Compile Include="Modelo1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,6 +83,7 @@
     <Compile Include="Turno.cs">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Turno_DAO.cs" />
     <Compile Include="Usuario.cs">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>

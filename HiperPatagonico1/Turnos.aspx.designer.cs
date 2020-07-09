@@ -24,13 +24,13 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.Label LabelCodigo;
 
         /// <summary>
-        /// Control codigo.
+        /// Control codigoTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox codigo;
+        protected global::System.Web.UI.WebControls.TextBox codigoTxt;
 
         /// <summary>
         /// Control LabelInicio.
@@ -42,13 +42,13 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.Label LabelInicio;
 
         /// <summary>
-        /// Control inicio.
+        /// Control inicioTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inicio;
+        protected global::System.Web.UI.WebControls.TextBox inicioTxt;
 
         /// <summary>
         /// Control Label1.
@@ -60,48 +60,39 @@ namespace HiperPatagonico1
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control termino.
+        /// Control terminoTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox termino;
+        protected global::System.Web.UI.WebControls.TextBox terminoTxt;
 
         /// <summary>
-        /// Control Label2.
+        /// Control LabelMsg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label LabelMsg;
 
         /// <summary>
-        /// Control colacion.
+        /// Control ButtonAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox colacion;
+        protected global::System.Web.UI.WebControls.Button ButtonAgregar;
 
         /// <summary>
-        /// Control LabelHoras.
+        /// Control RepeaterTurnos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelHoras;
-
-        /// <summary>
-        /// Control ButtonEditar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEditar;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterTurnos;
     }
 }

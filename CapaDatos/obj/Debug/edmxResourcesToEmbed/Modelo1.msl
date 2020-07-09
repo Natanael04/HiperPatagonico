@@ -32,10 +32,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="HorarioSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Modelo1.Horario)">
-        <MappingFragment StoreEntitySet="HorarioSet">
-          <ScalarProperty Name="Id_horario" ColumnName="Id_horario" />
+    <EntitySetMapping Name="EmpleadoTurnoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo1.EmpleadoTurno)">
+        <MappingFragment StoreEntitySet="EmpleadoTurnoSet">
+          <ScalarProperty Name="Id_EmpleadoTurno" ColumnName="Id_EmpleadoTurno" />
           <ScalarProperty Name="EmpleadoId_empleado" ColumnName="EmpleadoId_empleado" />
           <ScalarProperty Name="TurnoId_turno" ColumnName="TurnoId_turno" />
         </MappingFragment>

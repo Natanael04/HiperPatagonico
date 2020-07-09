@@ -13,39 +13,32 @@
               </div>
           </div>
       </div><br />
-        <form>
           <div class="row" >
                     <div class="col-md-5 col-md-offset-1">
                         <div class="form-group" style="margin-left: 58px; width: 328px;">
                             <asp:Label ID="LabelCodigo" class="control-label" runat="server" Text="Codigo"></asp:Label>
-                            <asp:TextBox ID="codigo" class="form-control" name="codigo" runat="server" placeholder="Ingrese codigo..." Width="300px" value="t/33"></asp:TextBox>
+                            <asp:TextBox ID="codigoTxt" class="form-control" name="codigo" runat="server" placeholder="Ingrese codigo..." Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
                         </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group" style="margin-left: 58px; width: 328px;">
                             <asp:Label ID="LabelInicio" class="control-label" runat="server" Text="Inicio"></asp:Label>
-                            <asp:TextBox ID="inicio" class="form-control" name="inicio" runat="server" placeholder="Ingrese hora inicio..." Width="300px" value="08:00"></asp:TextBox>
+                            <asp:TextBox ID="inicioTxt" class="form-control" name="inicio" type="time"  min="07:00" max="22:00" runat="server" placeholder="Ingrese hora inicio..." Width="300px" required autocomplete="off" ></asp:TextBox>
                         </div>
 
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group" style="margin-left: 58px; width: 328px;">
                             <asp:Label ID="LabeTermino" class="control-label" runat="server" Text="Termino"></asp:Label>
-                            <asp:TextBox ID="termino" class="form-control" name="termino" runat="server" placeholder="Ingrese hora termino..." Width="300px" value="18:00"></asp:TextBox>
-                    </div>
-                  </div>
-              <div class="col-md-7 col-md-offset-1">
-                        <div class="form-group" style="margin-left: 58px; width: 328px;">
-                            <asp:Label ID="LabelColacion" class="control-label" runat="server" Text="Colacion"></asp:Label>
-                            <asp:TextBox ID="colacion" class="form-control" name="colacion" runat="server" placeholder="Ingrese Duración de colación..." Width="300px" value="1 hrs"></asp:TextBox>
+                            <asp:TextBox ID="terminoTxt" class="form-control" name="termino" type="time"  min="07:00" max="22:00" runat="server" placeholder="Ingrese hora termino..." Width="300px" required autocomplete="off" ></asp:TextBox>
                     </div>
                   </div>
           </div>
             <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Guardar</button>
+          <asp:Button ID="ButtonGuardar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButtonGuardar_Click" />
                 </div>
-          </form>
             </div>
+                <asp:Label ID="LabelErr" ForeColor="White" runat="server" Text=""></asp:Label>
         </div>
     </div>
 </div>

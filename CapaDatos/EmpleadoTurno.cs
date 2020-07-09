@@ -12,10 +12,13 @@ namespace CapaDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Horario
+    public partial class EmpleadoTurno
     {
-        public int Id_horario { get; set; }
+        public int Id_EmpleadoTurno { get; set; }
         public int EmpleadoId_empleado { get; set; }
         public int TurnoId_turno { get; set; }
+    
+        public virtual Empleado Empleado { get; set; }
+        public virtual Turno Turno { get; set; }
     }
 }

@@ -57,6 +57,13 @@ namespace HiperPatagonico1
                 {
                     if (rut == dr[1].ToString() && contrasena == dr[4].ToString())
                     {
+                        Usuario usuarioLog = new Usuario();
+                        usuarioLog.rut = dr[1].ToString();
+                        usuarioLog.nombre = dr[2].ToString();
+                        usuarioLog.apellido = dr[3].ToString();
+                        usuarioLog.contraseña = dr[4].ToString();
+                        usuarioLog.rol = dr[5].ToString();
+                        Session["Usuario"] = usuarioLog;
                         Response.Redirect("~/Default.aspx");
                     }
                     else

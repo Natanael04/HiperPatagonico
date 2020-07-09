@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/04/2020 20:04:03
+-- Date Created: 07/08/2020 19:19:48
 -- Generated from EDMX file: C:\Users\henri\source\repos\HiperPatagonico\CapaDatos\Modelo1.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_HorarioTurno]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[TurnoSet] DROP CONSTRAINT [FK_HorarioTurno];
+IF OBJECT_ID(N'[dbo].[FK_EmpleadoEmpleadoTurno]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EmpleadoTurnoSet] DROP CONSTRAINT [FK_EmpleadoEmpleadoTurno];
 GO
-IF OBJECT_ID(N'[dbo].[FK_HorarioEmpleado]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[EmpleadoSet] DROP CONSTRAINT [FK_HorarioEmpleado];
+IF OBJECT_ID(N'[dbo].[FK_TurnoEmpleadoTurno]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EmpleadoTurnoSet] DROP CONSTRAINT [FK_TurnoEmpleadoTurno];
 GO
 
 -- --------------------------------------------------
@@ -37,8 +37,8 @@ GO
 IF OBJECT_ID(N'[dbo].[TurnoSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TurnoSet];
 GO
-IF OBJECT_ID(N'[dbo].[HorarioSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[HorarioSet];
+IF OBJECT_ID(N'[dbo].[EmpleadoTurnoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EmpleadoTurnoSet];
 GO
 
 -- --------------------------------------------------
@@ -73,9 +73,9 @@ CREATE TABLE [dbo].[TurnoSet] (
 );
 GO
 
--- Creating table 'HorarioSet'
-CREATE TABLE [dbo].[HorarioSet] (
-    [Id_horario] int IDENTITY(1,1) NOT NULL,
+-- Creating table 'EmpleadoTurnoSet'
+CREATE TABLE [dbo].[EmpleadoTurnoSet] (
+    [Id_EmpleadoTurno] int IDENTITY(1,1) NOT NULL,
     [EmpleadoId_empleado] int  NOT NULL,
     [TurnoId_turno] int  NOT NULL
 );
@@ -103,43 +103,43 @@ ADD CONSTRAINT [PK_TurnoSet]
     PRIMARY KEY CLUSTERED ([Id_turno] ASC);
 GO
 
--- Creating primary key on [Id_horario] in table 'HorarioSet'
-ALTER TABLE [dbo].[HorarioSet]
-ADD CONSTRAINT [PK_HorarioSet]
-    PRIMARY KEY CLUSTERED ([Id_horario] ASC);
+-- Creating primary key on [Id_EmpleadoTurno] in table 'EmpleadoTurnoSet'
+ALTER TABLE [dbo].[EmpleadoTurnoSet]
+ADD CONSTRAINT [PK_EmpleadoTurnoSet]
+    PRIMARY KEY CLUSTERED ([Id_EmpleadoTurno] ASC);
 GO
 
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [EmpleadoId_empleado] in table 'HorarioSet'
-ALTER TABLE [dbo].[HorarioSet]
-ADD CONSTRAINT [FK_EmpleadoHorario]
+-- Creating foreign key on [EmpleadoId_empleado] in table 'EmpleadoTurnoSet'
+ALTER TABLE [dbo].[EmpleadoTurnoSet]
+ADD CONSTRAINT [FK_EmpleadoEmpleadoTurno]
     FOREIGN KEY ([EmpleadoId_empleado])
     REFERENCES [dbo].[EmpleadoSet]
         ([Id_empleado])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_EmpleadoHorario'
-CREATE INDEX [IX_FK_EmpleadoHorario]
-ON [dbo].[HorarioSet]
+-- Creating non-clustered index for FOREIGN KEY 'FK_EmpleadoEmpleadoTurno'
+CREATE INDEX [IX_FK_EmpleadoEmpleadoTurno]
+ON [dbo].[EmpleadoTurnoSet]
     ([EmpleadoId_empleado]);
 GO
 
--- Creating foreign key on [TurnoId_turno] in table 'HorarioSet'
-ALTER TABLE [dbo].[HorarioSet]
-ADD CONSTRAINT [FK_TurnoHorario]
+-- Creating foreign key on [TurnoId_turno] in table 'EmpleadoTurnoSet'
+ALTER TABLE [dbo].[EmpleadoTurnoSet]
+ADD CONSTRAINT [FK_TurnoEmpleadoTurno]
     FOREIGN KEY ([TurnoId_turno])
     REFERENCES [dbo].[TurnoSet]
         ([Id_turno])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_TurnoHorario'
-CREATE INDEX [IX_FK_TurnoHorario]
-ON [dbo].[HorarioSet]
+-- Creating non-clustered index for FOREIGN KEY 'FK_TurnoEmpleadoTurno'
+CREATE INDEX [IX_FK_TurnoEmpleadoTurno]
+ON [dbo].[EmpleadoTurnoSet]
     ([TurnoId_turno]);
 GO
 

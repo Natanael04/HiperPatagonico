@@ -51,20 +51,19 @@
           </div>
       </div>
       <div class="modal-body">
-        <form>
           <div class="row" >
                     
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelCodigo" class="control-label" runat="server" Text="Codigo"></asp:Label>
-                            <asp:TextBox ID="codigo" class="form-control" name="Codigo" runat="server" placeholder="Ingrese Codigo..." Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="codigoTxt" class="form-control" name="Codigo" runat="server" placeholder="Ingrese Codigo..." Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
 
               </div>
               <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="LabelInicio" class="control-label" runat="server" Text="Inicio"></asp:Label>
-                            <asp:TextBox ID="inicio" class="form-control" name="Inicio" runat="server" placeholder="Hora inicio" Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="inicioTxt" class="form-control" type="time"  min="07:00" max="22:00" name="Inicio" runat="server" placeholder="Hora inicio" Width="300px" required autocomplete="off"></asp:TextBox>
                             
                             
                         </div>
@@ -72,22 +71,28 @@
                <div class="col-md-7 col-md-offset-1">
                         <div class="form-group">
                             <asp:Label ID="Label1" class="control-label" runat="server" Text="Termino"></asp:Label>
-                            <asp:TextBox ID="termino" class="form-control" name="Termino" runat="server" placeholder="Hora salida" Width="300px"></asp:TextBox>
-                        </div>
-              </div>
-              <div class="col-md-7 col-md-offset-1">
-                        <div class="form-group">
-                            <asp:Label ID="Label2" class="control-label" runat="server" Text="Colacion"></asp:Label>
-                            <asp:TextBox ID="colacion" class="form-control" name="colacion" runat="server" placeholder="Duración colación" Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="terminoTxt" class="form-control" type="time" min="07:00" max="22:00" name="Termino" runat="server" placeholder="Hora salida" Width="300px" required autocomplete="off"></asp:TextBox>
                         </div>
               </div>
           </div>
       </div>
+                              <asp:Label ID="LabelMsg" runat="server" Text=""></asp:Label>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" id="cancelar" class="btn btn-secondary" data-dismiss="modal" onclick="clearTextBox()" >Cancelar</button>
+
+          <script type="text/javascript">
+              function clearTextBox() {
+                  var elements = [];
+                  elements = document.getElementsByClassName("form-control"); // your class name 
+
+                  for (var i = 0; i < elements.length; i++) {
+                      elements[i].value = "";
+                  }
+              }
+
+          </script>
+          <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButtonAgregar_Click" />
       </div>
-     </form>
     </div>
   </div>
 </div>
@@ -107,27 +112,33 @@
                                 <th class="text-center">Codigo</th>
                                 <th class="text-center">Inicio</th>                               
                                 <th class="text-center">Termino</th>
-                                <th class="text-center">Colacion</th>
                                 <th class="text-center">Total horas</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>01</td>
-                                <td>T/33</td>
-                                <td>08:00</td>                                
-                                <td>18:00</td>
-                                <td>1 hrs</td>
-                                <td>
-                                    <asp:Label ID="LabelHoras" runat="server" Text="Label"></asp:Label></td>
-                                <td>
-                                    <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click" />
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>
-                                </td>
+                            <asp:Repeater ID="RepeaterTurnos" runat="server" OnItemCommand="Repeater1_OnItemCommand">
+                                <ItemTemplate>
+                                   <tr>
+                                       <td><asp:Label ID="Label_id" runat="server" Text='<%#Eval("Id_turno") %>'/></td>
+                                       <td><%# Eval("codigo")%></td>
+                                       <td><%# Eval("horaInicio")%></td>
+                                       <td><%# Eval("horaTermino")%></td>
+                                       <td>awawawaaaa
+                                       <td>
+                                           <asp:linkbutton ID="Linkbutton1" class="btn btn-warning btn-sm" commandname="Update"
+                                               runat="server" text="Editar"  
+                                               CommandArgument='<%#Eval("Id_turno")%>' />
+                                           <asp:linkbutton ID="Linkbutton2" class="btn btn-danger btn-sm" commandname="Destroy"
+                                               runat="server" text="Eliminar"  
+                                               CommandArgument='<%#Eval("Id_turno")%>' />
 
-                            </tr>
-                                                    
+<%--                                           <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click"  />--%>
+<%--                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>--%>
+                                       </td>
+                                   </tr>
+                               </ItemTemplate>
+                            </asp:Repeater>                 
                         </tbody>        
                        </table>                  
                     </div>

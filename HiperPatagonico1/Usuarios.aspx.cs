@@ -16,7 +16,7 @@ namespace HiperPatagonico1
             RepeaterUsuarios.DataSource = usuario.Listar();
             RepeaterUsuarios.DataBind();
         }
-    Usuario_BO userBO = new Usuario_BO();
+            Usuario_BO userBO = new Usuario_BO();
         protected void ButtonAgregar_Click(object sender, EventArgs e)
         {
             string sw;

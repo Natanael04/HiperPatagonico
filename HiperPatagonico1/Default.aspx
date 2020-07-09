@@ -36,7 +36,7 @@
                             <h3>Bienvenid@:</h3>
                         </div>
                         <div class="col">
-                            <p>Vicente Galindo</p>
+                            <p><asp:Label ID="LabelNombreUsuario" runat="server" Text="Label"></asp:Label> <asp:Label ID="LabelApellidoUsuario" runat="server" Text="Label"></asp:Label></p>
                         </div>
                     </div>
                     

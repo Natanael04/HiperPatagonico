@@ -25,20 +25,42 @@
             border-top-width: medium;
         }
     </style>
+    <script lang="JavaScript">
+        function validar_rut(source, arguments)
+        {
+        var rut=arguments.Value;suma=0;mul=2;i=0;
+
+        for (i=rut.length-3;i>=0;i--)
+        {
+        suma=suma+parseInt(rut.charAt(i)) * mul;
+        mul= mul==7 ? 2 : mul+1;
+        }
+
+        var dvr = ''+(11 - suma % 11);
+        if (dvr=='10') dvr = 'K'; else if (dvr=='11') dvr = '0';
+
+        if (rut.charAt(rut.length-2)!="-"||rut.charAt(rut.length-1).toUpperCase()!=dvr)
+        arguments.IsValid = false;
+        else
+        arguments.IsValid = true;
+        }
+</script>
 </head>
 <body style="background-size: cover;">
 <div class="loginbox" style="border-radius:10px">
         <img src="img/avatar.png" alt="Alternate Text" class="user" />
         <h2>Iniciar Sesión</h2> <br />
         <form id="form1" runat="server">
-            <asp:Label Text="Rut" CssClass="lblrut" runat="server" />
-            <asp:TextBox runat="server" CssClass="txtrut" Placeholder="Ingrese Rut" required ID="txtRut" autocomplete="off"/>
+            <asp:Label Text="Rut (con guión)" CssClass="lblrut" runat="server" />
+            <asp:TextBox id="txtRut" runat="server" Columns="20" MaxLength="10" CssClass="txtrut" Placeholder="Ingrese Rut" required autocomplete="off"/>
+            <br />
             <asp:Label Text="Contraseña" CssClass="lblpass" runat="server" /><br />
             <asp:TextBox TextMode="Password"  runat="server"  CssClass="txtrut" Placeholder="Ingrese contraseña" Width="270px" required ID="txtPass" /><br />
             <asp:LinkButton Text="¿Olvidaste tu contraseña?" CssClass="btnolvidar" runat="server" /><br /><br />
             <asp:Button Text="Ingresar" CssClass="btn" runat="server" OnClick="Unnamed5_Click"   />
            
             <asp:Label ID="lblMensaje" ForeColor="Red" runat="server" Text="Label"></asp:Label>
+            <asp:CustomValidator id="cv_rut" runat="server" ForeColor="red" ControlToValidate="txtRut" Display="Dynamic" ErrorMessage="El rut no es valido" ClientValidationFunction="validar_rut" />
         </form>
     </div> 
 </body>
