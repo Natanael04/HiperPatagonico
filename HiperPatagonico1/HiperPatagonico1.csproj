@@ -203,6 +203,7 @@
     <Content Include="Crud_usuarios\EditarUsuario.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Empleados.aspx" />
+    <Content Include="EmpleadoTurno.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fullcalendar1\LICENSE.txt" />
@@ -386,6 +387,13 @@
     </Compile>
     <Compile Include="Empleados.aspx.designer.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoTurno.aspx.cs">
+      <DependentUpon>EmpleadoTurno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpleadoTurno.aspx.designer.cs">
+      <DependentUpon>EmpleadoTurno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

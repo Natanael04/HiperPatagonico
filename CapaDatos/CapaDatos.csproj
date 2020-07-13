@@ -63,6 +63,7 @@
     <Compile Include="EmpleadoTurno.cs">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmpleadoTurno_DAO.cs" />
     <Compile Include="Empleado_DAO.cs" />
     <Compile Include="Modelo1.Context.cs">
       <AutoGen>True</AutoGen>

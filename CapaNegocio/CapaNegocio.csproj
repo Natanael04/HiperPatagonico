@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="EmpleadoTurno_BO.cs" />
     <Compile Include="Empleado_BO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Turno_BO.cs" />
