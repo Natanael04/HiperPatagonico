@@ -10,9 +10,14 @@ namespace CapaDatos
     {
         Modelo1Container BD = new Modelo1Container();
 
-        public void Ingresar(EmpleadoTurno u)
+        public void Ingresar(int idEmpleado, int idTurno)
         {
-            BD.EmpleadoTurnoSet.Add(u);
+            EmpleadoTurno relacion = new EmpleadoTurno();
+
+            relacion.EmpleadoId_empleado = idEmpleado;
+            relacion.TurnoId_turno = idTurno;
+
+            BD.EmpleadoTurnoSet.Add(relacion);
             BD.SaveChanges();
         }
         public List<EmpleadoTurno> Listar()

@@ -3,6 +3,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    
     <div class="jumbotron">
         <div class="row">
             <div class="col-md-9">
@@ -35,7 +38,7 @@
                                 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:10%">
   <div class="modal-dialog" >
     <div class="modal-content" >
       <div class="modal-header">
@@ -53,9 +56,41 @@
         
       </div>
       <div class="modal-body" style="">
-          <div class="row" >
-              
+          <div class="container">
+              <div class="row text-center" >
+              <div class="col-md-3 text-right">
+
+                   <%--<asp:Repeater runat="server" ID="RepeaterEmpleados" OnItemCreated="ListarDropEmpleados">
+                        <ItemTemplate>
+                            <asp:DropDownList runat="server" class="js-example-basic-single" ID="selectEmpleadoDrop"/>
+                        </ItemTemplate>
+                   </asp:Repeater>--%>
+
+
+                  
+                <select class="js-example-basic-single" id="selectEmpleado" name="selectEmpleado">
+                    <option value="" selected disabled>Ingrese Empleado</option>
+                    <asp:Repeater ID="RepeaterEmpleados" runat="server">
+                                <ItemTemplate>
+                                   <option value="<%#Eval("Id_empleado") %>"><%#Eval("nombre") %> <%#Eval("apellido") %></option>
+                               </ItemTemplate>
+                    </asp:Repeater> 
+                </select>
+
+              </div>
+              <div class="col-md-3 text-left">
+                <select class="js-example-basic-single" id="selectTurno" name="selectTurno">
+                  <option value="" selected disabled>Ingrese Turno</option>
+                    <asp:Repeater ID="RepeaterTurnos" runat="server" >
+                                <ItemTemplate>
+                                   <option value="<%#Eval("Id_turno") %>"><%#Eval("codigo") %></option>
+                               </ItemTemplate>
+                    </asp:Repeater>
+                </select>
+              </div>
           </div>
+          </div>
+          
      </div>
                       <asp:Label ID="LabelMsg" runat="server" Text=""></asp:Label>
       <div class="modal-footer">
@@ -64,7 +99,7 @@
           <script type="text/javascript">
               function clearTextBox() {
                   var elements = [];
-                  elements = document.getElementsByClassName("form-control"); // your class name 
+                  elements = document.getElementsByClassName("form-control");
 
                   for (var i = 0; i < elements.length; i++) {
                       elements[i].value = "";
@@ -72,7 +107,7 @@
               }
 
           </script>
-          <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="Guardar" />
+          <asp:Button ID="ButtonAgregar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="ButtonAgregar_Click" />
       </div>
     </div>
   </div>
@@ -81,7 +116,7 @@
      <!--tabla con Repeater-->
     <div class="jumbotron">
                 
-
+        
         <div class="row ">
                 <div class="col-lg-12">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Agregar</button>
@@ -156,6 +191,12 @@
             $('#myModal').modal('toggle')
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2({ width: '60%' });
+        });
+    </script>
+    
 </asp:Content>
 
 

@@ -10,12 +10,12 @@ namespace CapaNegocio
     public class EmpleadoTurno_BO
     {
         EmpleadoTurno_DAO empleadoTurno_DAO = new EmpleadoTurno_DAO();
-        public string Ingresar(EmpleadoTurno u)
+        public string Ingresar(int idEmpleado, int idTurno)
         {
             string sw = " ";
             try
             {
-                empleadoTurno_DAO.Ingresar(u);
+                empleadoTurno_DAO.Ingresar(idEmpleado, idTurno);
             }
             catch (Exception ex)
             {
