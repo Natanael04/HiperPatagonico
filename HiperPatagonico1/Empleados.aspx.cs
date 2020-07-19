@@ -31,8 +31,8 @@ namespace HiperPatagonico1
                 }
                 else
                 {
-                    u.nombre = this.nombre.Text;
-                    u.apellido = this.apellido.Text;
+                    u.nombre = this.nombre.Text.Trim();
+                    u.apellido = this.apellido.Text.Trim();
 
                     
 

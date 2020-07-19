@@ -112,7 +112,6 @@
                                 <th class="text-center">Codigo</th>
                                 <th class="text-center">Inicio</th>                               
                                 <th class="text-center">Termino</th>
-                                <th class="text-center">Total horas</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
@@ -122,9 +121,8 @@
                                    <tr>
                                        <td><asp:Label ID="Label_id" runat="server" Text='<%#Eval("Id_turno") %>'/></td>
                                        <td><%# Eval("codigo")%></td>
-                                       <td><%# Eval("horaInicio")%></td>
-                                       <td><%# Eval("horaTermino")%></td>
-                                       <td>awawawaaaa
+                                       <td><%#Eval("horaInicio") %></td>
+                                       <td><%#Eval("horaTermino") %></td>
                                        <td>
                                            <asp:linkbutton ID="Linkbutton1" class="btn btn-warning btn-sm" commandname="Update"
                                                runat="server" text="Editar"  
@@ -145,22 +143,6 @@
                 </div>
         </div>  
     </div>
-    <div class="modal fade" id="confirm-eliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Eliminar Turno</h3>
-            </div>
-            <div class="modal-body">
-                <p>¿Esta seguro de eliminar este turno?, esta acción es irreversible.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <a class="btn btn-danger">Eliminar</a>
-            </div>
-        </div>
-    </div>
-</div>
     <script>
         $(document).ready(function () {
             

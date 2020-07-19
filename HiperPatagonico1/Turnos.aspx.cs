@@ -16,6 +16,7 @@ namespace HiperPatagonico1
             Turno_BO turno = new Turno_BO();
             RepeaterTurnos.DataSource = turno.Listar();
             RepeaterTurnos.DataBind();
+
         }
         Turno_BO turno_BO = new Turno_BO();
         protected void ButtonAgregar_Click(object sender, EventArgs e)
@@ -30,9 +31,9 @@ namespace HiperPatagonico1
                 }
                 else
                 {
-                    u.codigo = this.codigoTxt.Text;
-                    u.horaInicio = this.inicioTxt.Text;
-                    u.horaTermino = this.terminoTxt.Text;
+                    u.codigo = this.codigoTxt.Text.Trim();
+                    u.horaInicio = this.inicioTxt.Text.Trim();
+                    u.horaTermino = this.terminoTxt.Text.Trim();
                     sw = turno_BO.Ingresar(u);
                     this.codigoTxt.Text = ""; this.inicioTxt.Text = ""; this.terminoTxt.Text = "";
                     sw = "Usuario Ingresado";

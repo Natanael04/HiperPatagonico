@@ -57,17 +57,12 @@
       </div>
       <div class="modal-body" style="">
           <div class="container">
+              <div class="row">
+                  <div class="col-md-12"><p style="color:red"><strong>Atención!.</strong>Si el empleado o turno no aparecen asegúrese de que no estén ya asignados.</p></div>
+              </div>
               <div class="row text-center" >
               <div class="col-md-3 text-right">
 
-                   <%--<asp:Repeater runat="server" ID="RepeaterEmpleados" OnItemCreated="ListarDropEmpleados">
-                        <ItemTemplate>
-                            <asp:DropDownList runat="server" class="js-example-basic-single" ID="selectEmpleadoDrop"/>
-                        </ItemTemplate>
-                   </asp:Repeater>--%>
-
-
-                  
                 <select class="js-example-basic-single" id="selectEmpleado" name="selectEmpleado">
                     <option value="" selected disabled>Ingrese Empleado</option>
                     <asp:Repeater ID="RepeaterEmpleados" runat="server">
@@ -99,7 +94,7 @@
           <script type="text/javascript">
               function clearTextBox() {
                   var elements = [];
-                  elements = document.getElementsByClassName("form-control");
+                  elements = document.getElementsByClassName("js-example-basic-single");
 
                   for (var i = 0; i < elements.length; i++) {
                       elements[i].value = "";
@@ -136,7 +131,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <asp:Repeater ID="RepeaterUsuarios" runat="server" >
+                            <asp:Repeater ID="RepeaterUsuarios" runat="server" OnItemCommand="RepeaterUsuarios_OnItemCommand" >
                                 <ItemTemplate>
                                    <tr>
                                        <td><asp:Label ID="Label_id" runat="server" Text='<%#Eval("Id_empleadoTurno") %>'/></td>
@@ -146,15 +141,9 @@
                                        <td><%# Eval("turno.horaInicio")%></td>
                                        <td><%# Eval("turno.horaTermino")%></td>
                                        <td>
-                                           <asp:linkbutton ID="Linkbutton1" class="btn btn-warning btn-sm" commandname="Update"
-                                               runat="server" text="Editar"  
-                                               CommandArgument='<%#Eval("Id_empleadoTurno")%>' />
                                            <asp:linkbutton ID="Linkbutton2" class="btn btn-danger btn-sm" commandname="Destroy"
                                                runat="server" text="Eliminar"  
                                                CommandArgument='<%#Eval("Id_empleadoTurno")%>' />
-
-<%--                                           <asp:Button ID="ButtonEditar" class="btn btn-warning btn-sm" runat="server" Text="Editar" OnClick="ButtonEditar_Click"  />--%>
-<%--                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-eliminar">Eliminar</button>--%>
                                        </td>
                                    </tr>
                                </ItemTemplate>

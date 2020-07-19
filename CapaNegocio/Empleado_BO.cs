@@ -27,6 +27,10 @@ namespace CapaNegocio
         {
             return empleado_DAO.Listar();
         }
+        public List<Empleado> ListaFiltrada()
+        {
+            return empleado_DAO.ListaFiltrada();
+        }
         public void Modificar(Empleado u)
         {
             empleado_DAO.Modificar(u);

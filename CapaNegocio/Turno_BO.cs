@@ -27,6 +27,10 @@ namespace CapaNegocio
         {
             return turno_DAO.Listar();
         }
+        public List<Turno> ListaFiltrada()
+        {
+            return turno_DAO.ListaFiltrada();
+        }
         public void Modificar(Turno u)
         {
             turno_DAO.Modificar(u);

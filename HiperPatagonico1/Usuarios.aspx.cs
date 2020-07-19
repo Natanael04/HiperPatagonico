@@ -29,11 +29,11 @@ namespace HiperPatagonico1
                 }
                 else
                 {
-                    u.rut = this.rutTxt.Text;
-                    u.nombre = this.nombreTxt.Text;
-                    u.apellido = this.apellidoTxt.Text;
+                    u.rut = this.rutTxt.Text.Trim();
+                    u.nombre = this.nombreTxt.Text.Trim();
+                    u.apellido = this.apellidoTxt.Text.Trim();
                     u.rol = this.DropDownCargo.Text;
-                    u.contraseña = this.contraseñaTxt.Text;
+                    u.contraseña = this.contraseñaTxt.Text.Trim();
                     sw = userBO.Ingresar(u);
                     this.rutTxt.Text = ""; this.nombreTxt.Text = ""; this.apellidoTxt.Text = ""; this.contraseñaTxt.Text = "";
                     sw = "Usuario Ingresado"; DropDownCargo.SelectedItem.Text = "Seleccione Cargo";

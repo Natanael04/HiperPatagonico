@@ -43,8 +43,8 @@ namespace HiperPatagonico1
             }
             if (lblMensaje.Text == "")
             {
-                string rut = this.txtRut.Text.Replace(";", "").Replace("--", "");
-                string contrasena = this.txtPass.Text.Replace(";", "").Replace("--", "");
+                string rut = this.txtRut.Text.Trim().Replace(";", "").Replace("--", "");
+                string contrasena = this.txtPass.Text.Trim().Replace(";", "").Replace("--", "");
 
                 //Response.Redirect("~/Default.aspx");
                 SqlCommand cmd = new SqlCommand("Select * From dbo.UsuarioSet where rut='" + rut + "'", con);
@@ -71,6 +71,11 @@ namespace HiperPatagonico1
                         lblMensaje.Visible = true;
                         lblMensaje.Text = "Credenciales incorrectas verifique Usuario y Contraseña por favor.";
                     }
+                }
+                else
+                {
+                    lblMensaje.Visible = true;
+                    lblMensaje.Text = "El usuario ingresado no existe.";
                 }
                 dr.Close();
             }
