@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CapaDatos;
+using CapaNegocio;
 
 namespace HiperPatagonico1
 {
@@ -11,7 +13,9 @@ namespace HiperPatagonico1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            EmpleadoTurno_BO relacion = new EmpleadoTurno_BO();
+            RepeaterEmp.DataSource = relacion.Listar();
+            RepeaterEmp.DataBind();
         }
     }
 }

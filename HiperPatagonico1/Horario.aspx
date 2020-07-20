@@ -115,26 +115,19 @@
 </style>
 <body>
               <div id='wrap'>
-
-                <div id='external-events'>
-                  <h4>Turnos</h4>
+                <div id='external-events' style="margin-top:2%">
+                  <h4>Empleados</h4>
 
                   <div id='external-events-list'>
-                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-                      <div class='fc-event-main'>My Event 1</div>
-                    </div>
-                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-                      <div class='fc-event-main'>My Event 2</div>
-                    </div>
-                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-                      <div class='fc-event-main'>My Event 3</div>
-                    </div>
-                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-                      <div class='fc-event-main'>My Event 4</div>
-                    </div>
-                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-                      <div class='fc-event-main'>My Event 5</div>
-                    </div>
+
+
+                      <asp:Repeater ID="RepeaterEmp" runat="server" >
+                                <ItemTemplate>
+                                    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+                                      <div class='fc-event-main'><%# Eval("empleado.nombre")%> <%# Eval("empleado.apellido")%> /  <%# Eval("turno.codigo")%></div>
+                                    </div>
+                               </ItemTemplate>
+                            </asp:Repeater> 
                   </div>
 
                   <p>
@@ -142,8 +135,8 @@
                     <label for='drop-remove'>remover los turnos despues</label>
                   </p>
                 </div>
-
-                <div id='calendar-wrap'>
+                  
+                <div class="jumbotron" id='calendar-wrap'>
                   <div id='calendar'></div>
                 </div>
 
