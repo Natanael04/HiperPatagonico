@@ -56,7 +56,7 @@
             <br />
             <asp:Label Text="Contraseña" CssClass="lblpass" runat="server" /><br />
             <asp:TextBox TextMode="Password"  runat="server"  CssClass="txtrut" Placeholder="Ingrese contraseña" Width="270px" required ID="txtPass" /><br />
-            <asp:LinkButton Text="¿Olvidaste tu contraseña?" CssClass="btnolvidar" runat="server" /><br /><br />
+            <br /><br />
             <asp:Button Text="Ingresar" CssClass="btn" runat="server" OnClick="Unnamed5_Click"   />
            
             <asp:Label ID="lblMensaje" ForeColor="Red" runat="server" Text="Label"></asp:Label>
